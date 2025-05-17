@@ -16,13 +16,12 @@ COPY resources resources
 RUN npm run build
 
 
-
 # -------------------------------------
 # 2) PHP-FPM fáza (Alpine)
 # -------------------------------------
 FROM php:8.4-fpm-alpine
 
-# 2.1) Systémové nástroje a knižnice pre mbstring, zip, oniguruma
+# 2.1) Systémové nástroje a knižnice pre pdo_mysql, mbstring, zip, oniguruma
 RUN apk add --no-cache \
       zip unzip libzip-dev oniguruma-dev \
     && docker-php-ext-install \
@@ -34,20 +33,31 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www
 
-# 2.3) Skopíruj celý Laravel projekt (vrátane artisan)
+# 2.3) Skopíruj celý Laravel projekt
 COPY . .
 
-# 2.4) Nainštaluj PHP závislosti
-RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+# 2.4) Skopíruj .env (pre lokálny dev; v produkcii radšej mountovať)
+COPY .env.example .env
 
-# 2.5) Pridaj vygenerovaný frontend build
+# 2.5) Vygeneruj APP_KEY a cache konfiguráciu
+RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist \
+ && php artisan key:generate --ansi \
+ && php artisan config:cache
+
+# 2.6) Pridaj vygenerovaný frontend build
 COPY --from=node-builder /var/www/public/build public/build
 
+# 2.7) Nastav povolenia
 RUN chmod +w bootstrap/cache \
- && chmod +w storage
+ && chmod +w storage \
+ && chown -R www-data:www-data storage bootstrap/cache
 
-# 2.6) Nastav práva na storage a cache
-RUN chown -R www-data:www-data storage bootstrap/cache
+# 2.8) Expose pre PHP-FPM (interný port)
+EXPOSE 9000
 
-# 2.7) Štart PHP-FPM
+# 2.9) Jednoduchý healthcheck (voliteľné)
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s \
+  CMD wget --quiet --spider http://127.0.0.1:9000 || exit 1
+
+# 2.10) Štart PHP-FPM
 CMD ["php-fpm"]
