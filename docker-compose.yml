@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   app:
     build: .
@@ -20,6 +22,8 @@ services:
       - "8000:80"
     volumes:
       - .:/var/www
+      # named volume, ktoré na prvý mount skopíruje built public/build z image
+      - public_build:/var/www/public/build
       - ./docker/nginx:/etc/nginx/conf.d
     networks:
       - laravel
@@ -48,3 +52,4 @@ networks:
 
 volumes:
   dbdata:
+  public_build:   # tu deklarujeme named volume pre built assets
