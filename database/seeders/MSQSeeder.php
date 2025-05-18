@@ -32,6 +32,7 @@ class MSQSeeder extends Seeder
             // insert translation
 
 
+
             // insert choices
             foreach ($item['choices'] as $choice) {
                 $choiceId = DB::table('choices')->insertGetId([
