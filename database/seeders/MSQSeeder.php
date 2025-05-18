@@ -11,10 +11,6 @@ class MSQSeeder extends Seeder
     public function run()
     {
         $now = Carbon::now();
-        $items = json_decode(
-            file_get_contents(database_path('seeders/data/questions.json')),
-            true
-        );
 
         $items = json_decode(
             file_get_contents(database_path('seeders/data/questions.json')),
