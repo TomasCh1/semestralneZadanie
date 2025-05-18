@@ -1,24 +1,65 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\AdminDashboardController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*
+|--------------------------------------------------------------------------
+| Guest Routes (neprihlásený používateľ)
+|--------------------------------------------------------------------------
+*/
+Route::view('/', 'welcome')->name('home');
 
 Route::middleware('guest')->group(function () {
-    Route::view('/', 'auth.index');
+    // Prihlásenie
+    Route::view('login', 'auth.login')->name('login');
+    Route::post('login', [AuthenticatedSessionController::class, 'store']);
+
+    // Registrácia
+    Route::view('register', 'auth.register')->name('register');
+    Route::post('register', [RegisteredUserController::class, 'store']);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+/*
+|--------------------------------------------------------------------------
+| Authenticated Routes (registrovaný používateľ)
+|--------------------------------------------------------------------------
+*/
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Dashboard po prihlásení
+    Route::view('dashboard', 'dashboard')->name('dashboard');
+
+    // Testy (prístupné len registrovaným)
+    Route::get('test', [TestController::class, 'showTestPage'])->name('test.show');
+    Route::post('test/submit', [TestController::class, 'submitAnswer'])->name('test.submit');
+
+    // Profil
+    Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Odhlásenie
+    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });
 
-require __DIR__.'/auth.php';
+/*
+|--------------------------------------------------------------------------
+| Admin Routes (administrátor)
+|--------------------------------------------------------------------------
+| Vlastné middleware 'is_admin' overí user->role_id === 1
+*/
+Route::middleware(['auth', 'is_admin'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        // Admin Dashboard
+        Route::view('dashboard', 'admin.dashboard')->name('dashboard');
+        // ... ďalšie adminské routy
+    });
+
+// Laravel-ské routy pre password reset, email verification a pod.
+require __DIR__ . '/auth.php';
