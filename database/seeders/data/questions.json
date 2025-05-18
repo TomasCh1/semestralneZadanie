@@ -1,0 +1,181 @@
+[
+    {
+        "type": "MCQ",
+        "question_text": "Je daná lineárna funkcia f(x) = 2x + 4. Nájdite jej nulové body.",
+        "choices": [
+            { "text": "Má jeden nulový bod: 4",  "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je pravdivá.",  "is_correct": true },
+            { "text": "Má dva nulové body: 2 a 4",  "is_correct": false },
+            { "text": "Má jeden nulový bod: 2",  "is_correct": false },
+            { "text": "Nemá žiadny nulový bod.",  "is_correct": false }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Uvažujme dva sústredné kruhy s polomermi r1 a r2. Vyberte veľkosti polomerov tak, aby veľkosť plochy medzikružia bola 3π.",
+
+        "choices": [
+            { "text": "r1 = 3/2, r2 = 3",  "is_correct": false },
+            { "text": "r1 = 1, r2 = 4",  "is_correct": false },
+            { "text": "r1 = √5, r2 = 2√2",  "is_correct": true },
+            { "text": "r1 = 3, r2 = 12",  "is_correct": false },
+            { "text": "r1 = √12, r2 = √6",  "is_correct": false }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Rovnica 2x + 1/(2x) = 2 má v R:",
+
+        "choices": [
+            { "text": "má práve dve riešenia, ktorých súčin je 1",  "is_correct": false },
+            { "text": "má práve dve riešenia, ktorých súčet je 2",  "is_correct": false },
+            { "text": "má práve jedno riešenie",  "is_correct": true },
+            { "text": "nemá žiadne riešenie",  "is_correct": false },
+            { "text": "má práve dve riešenia, ktorých súčet je 0",  "is_correct": false }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Nájdite súčet prvých piatich členov a1 + a2 + a3 + a4 + a5 aritmetickej postupnosti, ak viete, že a2 + a3 + a4 = 9.",
+
+        "choices": [
+            { "text": "18",  "is_correct": false },
+            { "text": "6",  "is_correct": false },
+            { "text": "Z uvedených údajov sa to nedá vypočítať.",  "is_correct": false },
+            { "text": "15",  "is_correct": true },
+            { "text": "9",  "is_correct": false }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Kvadratická rovnica 3x^2 + 2x − 3 = 0 má:",
+
+        "choices": [
+            { "text": "Práve jedno riešenie.",  "is_correct": false },
+            { "text": "Práve dve riešenia, ktorých súčin je číslo −3.",  "is_correct": false },
+            { "text": "Práve dve záporné riešenia.",  "is_correct": false },
+            { "text": "Práve dve riešenia, ktorých súčin je číslo −1.",  "is_correct": true },
+            { "text": "Práve dve kladné riešenia.",  "is_correct": false }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Výraz (a^2 − 2ab + b^2)/(a^3 − a^2b − ab^2 + b^3) sa pre a ≠ b a a ≠ −b rovná:",
+
+        "choices": [
+            { "text": "1/(a - b)",  "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je správna",  "is_correct": false },
+            { "text": "a + b", "is_correct": false },
+            { "text": "1/(a + b)",  "is_correct": true },
+            { "text": "a - b",  "is_correct": false }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Rovnica √(1 + x) − 2x^2 = √x má v R:",
+
+        "choices": [
+            { "text": "nemá žiadne riešenie.",  "is_correct": false },
+            { "text": "má práve dva iracionálne korene.",  "is_correct": false },
+            { "text": "má práve dva korene, ktorých súčin je −1/2.",  "is_correct": false },
+            { "text": "má práve jeden celočíselný koreň.",  "is_correct": false },
+            { "text": "má práve jeden koreň.",  "is_correct": true }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Dĺžky uhlopriečok kosoštvorca sú 6 a 8 cm. Jeho obvod je:",
+
+        "choices": [
+            { "text": "16 cm",  "is_correct": false },
+            { "text": "sa z uvedených údajov nedá vypočítať",  "is_correct": false },
+            { "text": "14 cm",  "is_correct": false },
+            { "text": "28 cm",  "is_correct": false },
+            { "text": "20 cm",  "is_correct": true }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Koľko je štvorciferných čísel, ktoré majú vo svojom zápise všetky cifry rôzne?",
+
+        "choices": [
+            { "text": "9·9·8·7",  "is_correct": true },
+            { "text": "10·9·8·6",  "is_correct": false },
+            { "text": "10·9·8·7",  "is_correct": false },
+            { "text": "9000",  "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je správna.",  "is_correct": false }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Nájdite počet priesečníkov grafu funkcie f(x) = x^2 − 2x + 2 a priamky y = 1.",
+
+        "choices": [
+            { "text": "Žiadna z ostatných odpovedí nie je správna.",  "is_correct": false },
+            { "text": "Majú práve tri priesečníky.",  "is_correct": false },
+            { "text": "Majú práve jeden priesečník.",  "is_correct": true },
+            { "text": "Majú práve dva priesečníky.",  "is_correct": false },
+            { "text": "Nemajú žiadny priesečník.",  "is_correct": false }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Množina všetkých riešení rovnice sin x = cos x je:",
+
+        "choices": [
+            { "text": "{kπ; k ∈ Z} ∪ {π/4 + kπ; k ∈ Z}",  "is_correct": false },
+            { "text": "{π/4 + kπ; k ∈ Z}",  "is_correct": true },
+            { "text": "{π/4 + 2kπ; k ∈ Z}",  "is_correct": false },
+            { "text": "{kπ; k ∈ Z}",  "is_correct": false },
+            { "text": "prázdna množina.",  "is_correct": false }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Spoločný menovateľ zlomkov (x+1)/(x-1), (x-1)/(x+1), x/(1+x^2) je:",
+
+        "choices": [
+            { "text": "Žiadna z ostatných odpovedí nie je správna.",  "is_correct": false },
+            { "text": "1 - x^2",  "is_correct": false },
+            { "text": "1 + x^2",  "is_correct": false },
+            { "text": "x^4 - 1",  "is_correct": true },
+            { "text": "x",  "is_correct": false }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Ak log 3 = a a log 2 = b, čomu sa rovná log 12?",
+
+        "choices": [
+            { "text": "2ab",  "is_correct": false },
+            { "text": "2a + b",  "is_correct": false },
+            { "text": "4a",  "is_correct": false },
+            { "text": "a + b^2",  "is_correct": false },
+            { "text": "a + 2b",  "is_correct": true }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Každý prvok množiny M je prirodzené číslo, ktoré je deliteľné práve dvoma číslami z trojice čísel 3, 11, 33.",
+
+        "choices": [
+            { "text": "M = ∅",  "is_correct": true },
+            { "text": "M = {11, 22, 33}",  "is_correct": false },
+            { "text": "M = {75, 121, 758961}",  "is_correct": false },
+            { "text": "M = {174, 2772, 358479}",  "is_correct": false },
+            { "text": "M = {675, 12549, 257866}",  "is_correct": false }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Riešte nerovnicu |(x-3)/(2x-5)| ≥ 1. Množina všetkých jej riešení je:",
+
+        "choices": [
+            { "text": "⟨2, 8/3⟩",  "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je správna.",  "is_correct": false },
+            { "text": "⟨2, 5/2) ∪ (5/2, 8/3⟩",  "is_correct": true },
+            { "text": "(2, 5/2) ∪ (5/2, 8/3)",  "is_correct": false },
+            { "text": "⟨2, 5/2)",  "is_correct": false }
+        ]
+    }
+]
