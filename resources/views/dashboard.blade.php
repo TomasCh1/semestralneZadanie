@@ -10,10 +10,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="container mx-auto space-y-6">
                         <p class="mb-6">{{ __('dashboardL.welcome') }}</p>
-                        <div style="position: fixed; bottom: 0; right: 0; background: rgba(0,0,0,0.1); padding: 0.5em; font-size: 0.75em;">
-                            session('locale') = {{ session('locale') }}<br>
-                            app()->getLocale() = {{ app()->getLocale() }}
-                        </div>
+
 
 
                         <div class="bg-gray-100 p-4 rounded">
