@@ -55,10 +55,16 @@
                     </x-slot>
                 </x-dropdown>
             </div>
-                <div class="flex space-x-2">
-                    <a href=""> <img src="https://flagcdn.com/w20/sk.png" alt="SK flag" class="h-4 w-5 rounded mr-2"></a>
-                    <a href=""> <img src="https://flagcdn.com/w20/us.png" alt="US flag" class="h-4 w-5 rounded ml-1"></a>
-                </div>
+                <nav class="flex items-center">
+                    <a href="{{ url('locale/sk') }}"
+                       class="mr-2 {{ app()->getLocale()=='sk' ? 'opacity-50' : '' }}">
+                        <img src="https://flagcdn.com/w20/sk.png" alt="SK flag" class="h-4 w-5 rounded">
+                    </a>
+                    <a href="{{ url('locale/en') }}"
+                       class="{{ app()->getLocale()=='en' ? 'opacity-50' : '' }}">
+                        <img src="https://flagcdn.com/w20/us.png" alt="EN flag" class="h-4 w-5 rounded">
+                    </a>
+                </nav>
             </div>
 
             <!-- Hamburger -->
