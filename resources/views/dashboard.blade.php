@@ -51,9 +51,15 @@
                                     Nie ste prihlásený/á. <a href="{{ route('login') }}" class="text-blue-600 underline">Prihláste sa</a> pre uloženie výsledkov alebo pokračujte ako hosť.
                                 </p>
                             @endif
-                                <x-dashboard-button class="ms-3">
-                                    {{ __('Začať test') }}
-                                </x-dashboard-button>
+                                <div style="display: flex; justify-content: center; align-items: center">
+                                    <form method="POST" action="{{ route('test-runs.start') }}">
+                                        @csrf
+                                        <input type="hidden" name="timezone" id="tz">
+                                        <x-dashboard-button class="ms-3" style="background:#0a53be;">
+                                            {{ __('Začať test') }}
+                                        </x-dashboard-button>
+                                    </form>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -61,3 +67,9 @@
         </div>
     </div>
 </x-app-layout>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        document.getElementById('tz').value = tz ?? 'UTC';
+    });
+</script>
