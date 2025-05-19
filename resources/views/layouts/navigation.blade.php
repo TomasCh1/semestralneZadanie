@@ -58,11 +58,11 @@
                 <nav class="flex items-center">
                     <a href="{{ url('locale/sk') }}"
                        class="mr-2 {{ app()->getLocale()=='sk' ? 'opacity-50' : '' }}">
-                        <img src="https://flagcdn.com/w20/sk.png" alt="SK flag" class="h-4 w-5 rounded">
+                        <img src="https://flagcdn.com/w20/sk.png" alt="SK flag" class="h-4 w-5 rounded mr-1">
                     </a>
                     <a href="{{ url('locale/en') }}"
                        class="{{ app()->getLocale()=='en' ? 'opacity-50' : '' }}">
-                        <img src="https://flagcdn.com/w20/us.png" alt="EN flag" class="h-4 w-5 rounded">
+                        <img src="https://flagcdn.com/w20/us.png" alt="EN flag" class="h-4 w-5 rounded ml-1">
                     </a>
                 </nav>
             </div>
