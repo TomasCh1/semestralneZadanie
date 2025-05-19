@@ -1,8 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Testovanie matematiky
-        </h2>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">{{ __('dashboardL.title') }}</h2>
+
     </x-slot>
 
     <div class="py-8 mt-2">
@@ -10,56 +9,49 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="container mx-auto space-y-6">
-                        <p>
-                            Vitajte na našej platforme na testovanie zo stredoškolskej matematiky. Tu si môžete jednoducho vygenerovať test a počítať príklady s okamžitou odozvou.
-                        </p>
+                        <p class="mb-6">{{ __('dashboardL.welcome') }}</p>
+                        <div style="position: fixed; bottom: 0; right: 0; background: rgba(0,0,0,0.1); padding: 0.5em; font-size: 0.75em;">
+                            session('locale') = {{ session('locale') }}<br>
+                            app()->getLocale() = {{ app()->getLocale() }}
+                        </div>
+
 
                         <div class="bg-gray-100 p-4 rounded">
-                            <h3 class="text-2xl font-semibold mb-2">Ako to funguje?</h3>
+                            <h2 class="text-2xl font-semibold mb-2">{{ __('dashboardL.how_it_works') }}</h2>
                             <ol class="list-decimal list-inside space-y-2">
-                                <li>
-                                    Kliknite na tlačidlo <span class="font-medium">„Začni test“</span>.
-                                </li>
-                                <li>
-                                    Riešte test s náhodnými otázkami.
-                                </li>
-                                <li>
-                                    Otázky s možnosťami majú vždy iba jednú správnu odpoveď.
-                                </li>
-                                <li>
-                                    Na otvorené otázky odpovedajte v tvare "X=45" pokiaľ je X uvedené v rovnici.
-                                </li>
-                                <li>
-                                    Na vyplnenie testu nie je časový limit. Pre každú otázku sa merie čas na nej strávený.
-                                </li>
-                                <li>
-                                    Pri vyhodnotení vám ukáže aj kategórie otázok a vašu úspešnosť na jednotlivých témach.
-                                </li>
-                                <li>
-                                    Prihlásení používatelia si výsledky môžu uložiť na svoj profil.
-                                </li>
+                                <li>{{ __('dashboardL.steps.click_start') }}</li>
+                                <li>{{ __('dashboardL.steps.solve_random') }}</li>
+                                <li>{{ __('dashboardL.steps.one_answer') }}</li>
+                                <li>{{ __('dashboardL.steps.format_open') }}</li>
+                                <li>{{ __('dashboardL.steps.no_time_limit') }}</li>
+                                <li>{{ __('dashboardL.steps.show_categories') }}</li>
+                                <li>{{ __('dashboardL.steps.save_results') }}</li>
                             </ol>
                         </div>
 
                         <div class="text-center">
                             @if(Auth::check())
                                 <p class="mb-4">
-                                    Ahoj, <strong>{{ Auth::user()->name }}</strong>! Si pripravený?
+                                    {{ __('dashboardL.greeting', ['name' => Auth::user()->name]) }}
                                 </p>
                             @else
                                 <p class="mb-4">
-                                    Nie ste prihlásený/á. <a href="{{ route('login') }}" class="text-blue-600 underline">Prihláste sa</a> pre uloženie výsledkov alebo pokračujte ako hosť.
+                                    {!! __('dashboardL.guest_prompt', [
+                                        'login_link' => '<a href="'.route('login').'" class="text-blue-600 underline">'.__('dashboardL.login').'</a>'
+                                    ]) !!}
                                 </p>
                             @endif
-                                <div style="display: flex; justify-content: center; align-items: center">
-                                    <form method="POST" action="{{ route('test-runs.start') }}">
-                                        @csrf
-                                        <input type="hidden" name="timezone" id="tz">
-                                        <x-dashboard-button class="ms-3" style="background:#0a53be;">
-                                            {{ __('Začať test') }}
-                                        </x-dashboard-button>
-                                    </form>
-                                </div>
+
+                            <div class="flex justify-center items-center">
+                                <form method="POST" action="{{ route('test-runs.start') }}">
+                                    @csrf
+                                    <input type="hidden" name="timezone" id="tz">
+
+                                    <x-dashboard-button type="submit">
+                                        {{ __('dashboardL.start_test') }}
+                                    </x-dashboard-button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestRunController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\LocaleController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,9 +29,12 @@ Route::middleware('auth')->group(function () {
         ->name('test-runs.start');
 
 });
+Route::get('locale/{locale}', [LocaleController::class, 'switch'])
+    ->name('locale.switch');
 
 
 Route::middleware('web')->group(function () {
+
     // zobraziť aktuálnu otázku (alebo výsledky)
     Route::get ('/tests/{run}/question', [TestController::class, 'show'])
         ->name('tests.question');
