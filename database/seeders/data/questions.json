@@ -1,181 +1,1190 @@
 [
     {
         "type": "MCQ",
-        "question_text": "Je daná lineárna funkcia f(x) = 2x + 4. Nájdite jej nulové body.",
+        "question_text": "Je daná lineárna funkcia $f(x)=2x+4$. Nájdite jej nulové body.",
         "choices": [
-            { "text": "Má jeden nulový bod: 4",  "is_correct": false },
-            { "text": "Žiadna z ostatných odpovedí nie je pravdivá.",  "is_correct": true },
-            { "text": "Má dva nulové body: 2 a 4",  "is_correct": false },
-            { "text": "Má jeden nulový bod: 2",  "is_correct": false },
-            { "text": "Nemá žiadny nulový bod.",  "is_correct": false }
+            { "text": "Má jeden nulový bod: $4$",                          "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je pravdivá.",       "is_correct": true  },
+            { "text": "Má dva nulové body: $2$ a $4$",                    "is_correct": false },
+            { "text": "Má jeden nulový bod: $2$",                         "is_correct": false },
+            { "text": "Nemá žiadny nulový bod.",                          "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Funkcie" },
+            { "name": "Rovnice" }
+        ]
+
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Uvažujme dva sústredné kruhy s polomermi $r_1$ a $r_2$. Vyberte polomery tak, aby plocha medzikružia bola $3\\pi$.",
+        "choices": [
+            { "text": "$r_1=\\tfrac32,\\;r_2=3$",                         "is_correct": false },
+            { "text": "$r_1=1,\\;r_2=4$",                                 "is_correct": false },
+            { "text": "$r_1=\\sqrt5,\\;r_2=2\\sqrt2$",                    "is_correct": true  },
+            { "text": "$r_1=3,\\;r_2=12$",                                "is_correct": false },
+            { "text": "$r_1=\\sqrt{12},\\;r_2=\\sqrt6$",                  "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Planimetria" }
         ]
     },
     {
         "type": "MCQ",
-        "question_text": "Uvažujme dva sústredné kruhy s polomermi r1 a r2. Vyberte veľkosti polomerov tak, aby veľkosť plochy medzikružia bola 3π.",
-
+        "question_text": "Rovnica $2^x + \\frac{1}{2^x} = 2$ má v $\\mathbb R$:",
         "choices": [
-            { "text": "r1 = 3/2, r2 = 3",  "is_correct": false },
-            { "text": "r1 = 1, r2 = 4",  "is_correct": false },
-            { "text": "r1 = √5, r2 = 2√2",  "is_correct": true },
-            { "text": "r1 = 3, r2 = 12",  "is_correct": false },
-            { "text": "r1 = √12, r2 = √6",  "is_correct": false }
+            { "text": "má práve dve riešenia, ktorých súčin je $1$",        "is_correct": false },
+            { "text": "má práve dve riešenia, ktorých súčet je $2$",       "is_correct": false },
+            { "text": "má práve jedno riešenie",                           "is_correct": true  },
+            { "text": "nemá žiadne riešenie",                               "is_correct": false },
+            { "text": "má práve dve riešenia, ktorých súčet je $0$",       "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Rovnice" },
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" }
         ]
     },
     {
         "type": "MCQ",
-        "question_text": "Rovnica 2x + 1/(2x) = 2 má v R:",
-
+        "question_text": "Nájdite súčet prvých piatich členov $a_1 + a_2 + a_3 + a_4 + a_5$ aritmetickej postupnosti, ak $a_2 + a_3 + a_4 = 9$.",
         "choices": [
-            { "text": "má práve dve riešenia, ktorých súčin je 1",  "is_correct": false },
-            { "text": "má práve dve riešenia, ktorých súčet je 2",  "is_correct": false },
-            { "text": "má práve jedno riešenie",  "is_correct": true },
-            { "text": "nemá žiadne riešenie",  "is_correct": false },
-            { "text": "má práve dve riešenia, ktorých súčet je 0",  "is_correct": false }
+            { "text": "$a_1 + a_2 + a_3 + a_4 + a_5 = 18$",                "is_correct": false },
+            { "text": "$a_1 + a_2 + a_3 + a_4 + a_5 = 6$",                 "is_correct": false },
+            { "text": "Z uvedených údajov sa to nedá vypočítať.",           "is_correct": false },
+            { "text": "$a_1 + a_2 + a_3 + a_4 + a_5 = 15$",                "is_correct": true  },
+            { "text": "$a_1 + a_2 + a_3 + a_4 + a_5 = 9$",                 "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Postupnosti a rady reálnych čísel" }
         ]
     },
     {
         "type": "MCQ",
-        "question_text": "Nájdite súčet prvých piatich členov a1 + a2 + a3 + a4 + a5 aritmetickej postupnosti, ak viete, že a2 + a3 + a4 = 9.",
-
+        "question_text": "Kvadratická rovnica $3x^2 + 2x - 3 = 0$ má:",
         "choices": [
-            { "text": "18",  "is_correct": false },
-            { "text": "6",  "is_correct": false },
-            { "text": "Z uvedených údajov sa to nedá vypočítať.",  "is_correct": false },
-            { "text": "15",  "is_correct": true },
-            { "text": "9",  "is_correct": false }
+            { "text": "Práve jedno riešenie.",                             "is_correct": false },
+            { "text": "Práve dve riešenia, ktorých súčin je číslo $-3$.",   "is_correct": false },
+            { "text": "Práve dve záporné riešenia.",                       "is_correct": false },
+            { "text": "Práve dve riešenia, ktorých súčin je číslo $-1$.",   "is_correct": true  },
+            { "text": "Práve dve kladné riešenia.",                        "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Rovnice" }
         ]
     },
     {
         "type": "MCQ",
-        "question_text": "Kvadratická rovnica 3x^2 + 2x − 3 = 0 má:",
-
+        "question_text": "Výraz $\\frac{a^2 - 2ab + b^2}{a^3 - a^2b - ab^2 + b^3}$ sa pre $a \\neq b$ a $a \\neq -b$ rovná:",
         "choices": [
-            { "text": "Práve jedno riešenie.",  "is_correct": false },
-            { "text": "Práve dve riešenia, ktorých súčin je číslo −3.",  "is_correct": false },
-            { "text": "Práve dve záporné riešenia.",  "is_correct": false },
-            { "text": "Práve dve riešenia, ktorých súčin je číslo −1.",  "is_correct": true },
-            { "text": "Práve dve kladné riešenia.",  "is_correct": false }
+            { "text": "$\\tfrac{1}{a - b}$",                               "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je správna",         "is_correct": false },
+            { "text": "$a + b$",                                           "is_correct": false },
+            { "text": "$\\tfrac{1}{a + b}$",                               "is_correct": true  },
+            { "text": "$a - b$",                                           "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
         ]
     },
     {
         "type": "MCQ",
-        "question_text": "Výraz (a^2 − 2ab + b^2)/(a^3 − a^2b − ab^2 + b^3) sa pre a ≠ b a a ≠ −b rovná:",
-
+        "question_text": "Rovnica $\\sqrt{1 + x - 2x^2} = \\sqrt{x}$ má v $\\mathbb R$:",
         "choices": [
-            { "text": "1/(a - b)",  "is_correct": false },
-            { "text": "Žiadna z ostatných odpovedí nie je správna",  "is_correct": false },
-            { "text": "a + b", "is_correct": false },
-            { "text": "1/(a + b)",  "is_correct": true },
-            { "text": "a - b",  "is_correct": false }
+            { "text": "nemá žiadne riešenie.",                             "is_correct": false },
+            { "text": "má práve dva iracionálne korene.",                   "is_correct": false },
+            { "text": "má práve dva korene, ktorých súčin je $-\\tfrac{1}{2}$.", "is_correct": false },
+            { "text": "má práve jeden celočíselný koreň.",                 "is_correct": false },
+            { "text": "má práve jeden koreň.",                             "is_correct": true  }
+        ],
+        "areas": [
+            { "name": "Rovnice" }
         ]
     },
     {
         "type": "MCQ",
-        "question_text": "Rovnica √(1 + x) − 2x^2 = √x má v R:",
-
+        "question_text": "Dĺžky uhlopriečok kosoštvorca sú $6$ a $8\\,$cm. Jeho obvod je:",
         "choices": [
-            { "text": "nemá žiadne riešenie.",  "is_correct": false },
-            { "text": "má práve dva iracionálne korene.",  "is_correct": false },
-            { "text": "má práve dva korene, ktorých súčin je −1/2.",  "is_correct": false },
-            { "text": "má práve jeden celočíselný koreň.",  "is_correct": false },
-            { "text": "má práve jeden koreň.",  "is_correct": true }
-        ]
-    },
-    {
-        "type": "MCQ",
-        "question_text": "Dĺžky uhlopriečok kosoštvorca sú 6 a 8 cm. Jeho obvod je:",
-
-        "choices": [
-            { "text": "16 cm",  "is_correct": false },
-            { "text": "sa z uvedených údajov nedá vypočítať",  "is_correct": false },
-            { "text": "14 cm",  "is_correct": false },
-            { "text": "28 cm",  "is_correct": false },
-            { "text": "20 cm",  "is_correct": true }
+            { "text": "$16\\,$cm",                                         "is_correct": false },
+            { "text": "sa z uvedených údajov nedá vypočítať",               "is_correct": false },
+            { "text": "$14\\,$cm",                                         "is_correct": false },
+            { "text": "$28\\,$cm",                                         "is_correct": false },
+            { "text": "$20\\,$cm",                                         "is_correct": true  }
+        ],
+        "areas": [
+            { "name": "Planimetria" }
         ]
     },
     {
         "type": "MCQ",
         "question_text": "Koľko je štvorciferných čísel, ktoré majú vo svojom zápise všetky cifry rôzne?",
-
         "choices": [
-            { "text": "9·9·8·7",  "is_correct": true },
-            { "text": "10·9·8·6",  "is_correct": false },
-            { "text": "10·9·8·7",  "is_correct": false },
-            { "text": "9000",  "is_correct": false },
-            { "text": "Žiadna z ostatných odpovedí nie je správna.",  "is_correct": false }
+            { "text": "$9\\cdot9\\cdot8\\cdot7$",                           "is_correct": true  },
+            { "text": "$10\\cdot9\\cdot8\\cdot6$",                          "is_correct": false },
+            { "text": "$10\\cdot9\\cdot8\\cdot7$",                          "is_correct": false },
+            { "text": "$9000$",                                            "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je správna.",         "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Kombinatorika" }
         ]
     },
     {
         "type": "MCQ",
-        "question_text": "Nájdite počet priesečníkov grafu funkcie f(x) = x^2 − 2x + 2 a priamky y = 1.",
-
+        "question_text": "Nájdite počet priesečníkov grafu $f(x)=x^2-2x+2$ a priamky $y=1$.",
         "choices": [
-            { "text": "Žiadna z ostatných odpovedí nie je správna.",  "is_correct": false },
-            { "text": "Majú práve tri priesečníky.",  "is_correct": false },
-            { "text": "Majú práve jeden priesečník.",  "is_correct": true },
-            { "text": "Majú práve dva priesečníky.",  "is_correct": false },
-            { "text": "Nemajú žiadny priesečník.",  "is_correct": false }
+            { "text": "Žiadna z ostatných odpovedí nie je správna.",       "is_correct": false },
+            { "text": "Majú práve tri priesečníky.",                       "is_correct": false },
+            { "text": "Majú práve jeden priesečník.",                     "is_correct": true  },
+            { "text": "Majú práve dva priesečníky.",                      "is_correct": false },
+            { "text": "Nemajú žiadny priesečník.",                        "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Funkcie" },
+            { "name": "Rovnice" }
         ]
     },
     {
         "type": "MCQ",
-        "question_text": "Množina všetkých riešení rovnice sin x = cos x je:",
-
+        "question_text": "Množina všetkých riešení rovnice $\\sin x = \\cos x$ je:",
         "choices": [
-            { "text": "{kπ; k ∈ Z} ∪ {π/4 + kπ; k ∈ Z}",  "is_correct": false },
-            { "text": "{π/4 + kπ; k ∈ Z}",  "is_correct": true },
-            { "text": "{π/4 + 2kπ; k ∈ Z}",  "is_correct": false },
-            { "text": "{kπ; k ∈ Z}",  "is_correct": false },
-            { "text": "prázdna množina.",  "is_correct": false }
+            { "text": "$\\{k\\pi;\\;k\\in\\mathbb Z\\}\\cup\\{\\tfrac\\pi4 + k\\pi;\\;k\\in\\mathbb Z\\}$", "is_correct": false },
+            { "text": "$\\{\\tfrac\\pi4 + k\\pi;\\;k\\in\\mathbb Z\\}$",                             "is_correct": true  },
+            { "text": "$\\{\\tfrac\\pi4 + 2k\\pi;\\;k\\in\\mathbb Z\\}$",                          "is_correct": false },
+            { "text": "$\\{k\\pi;\\;k\\in\\mathbb Z\\}$",                                         "is_correct": false },
+            { "text": "$\\varnothing$",                                                           "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" }
         ]
     },
     {
         "type": "MCQ",
-        "question_text": "Spoločný menovateľ zlomkov (x+1)/(x-1), (x-1)/(x+1), x/(1+x^2) je:",
-
+        "question_text": "Spoločný menovateľ zlomkov $\\tfrac{x+1}{x-1}$, $\\tfrac{x-1}{x+1}$, $\\tfrac{x}{1+x^2}$ je:",
         "choices": [
-            { "text": "Žiadna z ostatných odpovedí nie je správna.",  "is_correct": false },
-            { "text": "1 - x^2",  "is_correct": false },
-            { "text": "1 + x^2",  "is_correct": false },
-            { "text": "x^4 - 1",  "is_correct": true },
-            { "text": "x",  "is_correct": false }
+            { "text": "Žiadna z ostatných odpovedí nie je správna.", "is_correct": false },
+            { "text": "$1 - x^2$",                                   "is_correct": false },
+            { "text": "$1 + x^2$",                                   "is_correct": false },
+            { "text": "$x^4 - 1$",                                   "is_correct": true  },
+            { "text": "$x$",                                         "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
         ]
     },
     {
         "type": "MCQ",
-        "question_text": "Ak log 3 = a a log 2 = b, čomu sa rovná log 12?",
-
+        "question_text": "Ak $\\log 3 = a$ a $\\log 2 = b$, čomu sa rovná $\\log 12$?",
         "choices": [
-            { "text": "2ab",  "is_correct": false },
-            { "text": "2a + b",  "is_correct": false },
-            { "text": "4a",  "is_correct": false },
-            { "text": "a + b^2",  "is_correct": false },
-            { "text": "a + 2b",  "is_correct": true }
+            { "text": "$2ab$",    "is_correct": false },
+            { "text": "$2a + b$", "is_correct": false },
+            { "text": "$4a$",     "is_correct": false },
+            { "text": "$a + b^2$", "is_correct": false },
+            { "text": "$a + 2b$",  "is_correct": true  }
+        ],
+        "areas": [
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" }
         ]
     },
     {
         "type": "MCQ",
-        "question_text": "Každý prvok množiny M je prirodzené číslo, ktoré je deliteľné práve dvoma číslami z trojice čísel 3, 11, 33.",
-
+        "question_text": "Každý prvok množiny $M$ je prirodzené číslo, ktoré je deliteľné práve dvoma číslami z trojice čísel $\\{3,11,33\\}$. Množina $M$ je:",
         "choices": [
-            { "text": "M = ∅",  "is_correct": true },
-            { "text": "M = {11, 22, 33}",  "is_correct": false },
-            { "text": "M = {75, 121, 758961}",  "is_correct": false },
-            { "text": "M = {174, 2772, 358479}",  "is_correct": false },
-            { "text": "M = {675, 12549, 257866}",  "is_correct": false }
+            { "text": "$M = \\varnothing$",                     "is_correct": true  },
+            { "text": "$M = \\{11,22,33\\}$",                  "is_correct": false },
+            { "text": "$M = \\{75,121,758961\\}$",             "is_correct": false },
+            { "text": "$M = \\{174,2772,358479\\}$",           "is_correct": false },
+            { "text": "$M = \\{675,12549,257866\\}$",          "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
         ]
     },
     {
         "type": "MCQ",
-        "question_text": "Riešte nerovnicu |(x-3)/(2x-5)| ≥ 1. Množina všetkých jej riešení je:",
-
+        "question_text": "Riešte nerovnicu $\\displaystyle\\bigl|\\tfrac{x-3}{2x-5}\\bigr|\\ge1$. Množina všetkých jej riešení je:",
         "choices": [
-            { "text": "⟨2, 8/3⟩",  "is_correct": false },
-            { "text": "Žiadna z ostatných odpovedí nie je správna.",  "is_correct": false },
-            { "text": "⟨2, 5/2) ∪ (5/2, 8/3⟩",  "is_correct": true },
-            { "text": "(2, 5/2) ∪ (5/2, 8/3)",  "is_correct": false },
-            { "text": "⟨2, 5/2)",  "is_correct": false }
+            { "text": "$\\langle2,\\tfrac83\\rangle$",                          "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je správna.",             "is_correct": false },
+            { "text": "$\\langle2,\\tfrac52)\\cup(\\tfrac52,\\tfrac83\\rangle$", "is_correct": true  },
+            { "text": "$(2,\\tfrac52)\\cup(\\tfrac52,\\tfrac83)$",              "is_correct": false },
+            { "text": "$\\langle2,\\tfrac52)$",                                 "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Nerovnice" }
         ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "O trojuholníku $ABC$ je vyslovený výrok:\n„Ak má trojuholník $ABC$ zhodné uhly pri vrcholoch $A$ a $B$, tak je rovnostranný.“ Negáciou tohto výroku je výrok:",
+        "choices": [
+            { "text": "Ak má trojuholník $ABC$ zhodné uhly pri vrcholoch $A$ a $B$, tak je rovnoramenný",                              "is_correct": false },
+            { "text": "Ak je trojuholník $ABC$ rovnostranný, tak má zhodné uhly pri vrcholoch $A$ a $B$.",                           "is_correct": false },
+            { "text": "Trojuholník $ABC$ má zhodné uhly pri vrcholoch $A$ a $B$, a nie je rovnostranný.",                           "is_correct": true  },
+            { "text": "Trojuholník $ABC$ je rovnostranný a nemá zhodné uhly pri vrcholoch $A$ a $B$.",                              "is_correct": false },
+            { "text": "Ak má trojuholník $ABC$ zhodné uhly pri vrcholoch $A,B,C$, tak je rovnostranný.",                           "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Je daná lineárna funkcia $f(x)=3x-1$. Nájdite jej nulové body.",
+        "choices": [
+            { "text": "Žiadna z ostatných odpovedí nie je pravdivá.", "is_correct": false },
+            { "text": "Nemá žiadny nulový bod.",                       "is_correct": false },
+            { "text": "Má dva nulové body: $1$ a $3$.",                "is_correct": false },
+            { "text": "Má jeden nulový bod: $\\tfrac{1}{3}$.",         "is_correct": true  },
+            { "text": "Má jeden nulový bod: $1$.",                     "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Funkcie" },
+            { "name": "Rovnice" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Kvadratická rovnica $2x^2 + x - 5 = 0$ má:",
+        "choices": [
+            { "text": "Práve jedno riešenie.",                                       "is_correct": false },
+            { "text": "Práve dve záporné riešenia.",                                 "is_correct": false },
+            { "text": "Práve dve riešenia, ktorých súčin je $-5$.",                   "is_correct": false },
+            { "text": "Práve dve riešenia, ktorých súčet je $-\\tfrac{1}{2}$.",       "is_correct": true  },
+            { "text": "Práve dve kladné riešenia.",                                  "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Rovnica $\\sqrt{-x^2 - 2x - 9} = \\sqrt{4x}$ má v $\\mathbb R$:",
+        "choices": [
+            { "text": "má práve jeden celočíselný koreň",                         "is_correct": false },
+            { "text": "má práve dva korene, ktorých súčet je $\\tfrac{5}{2}$",     "is_correct": false },
+            { "text": "má práve dva iracionálne korene",                          "is_correct": false },
+            { "text": "má práve dva korene, ktorých súčin je $-\\tfrac{3}{2}$",    "is_correct": false },
+            { "text": "nemá žiadne riešenie",                                      "is_correct": true  }
+        ],
+        "areas": [
+            { "name": "Rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Riešte nerovnicu $\\frac{2x^2 - 3x + 5}{x+1} \\ge 2$. Množina všetkých jej riešení je:",
+        "choices": [
+            { "text": "Žiadna z ostatných odpovedí nie je správna.", "is_correct": false },
+            { "text": "$(-\\infty,1]\\cup[\\tfrac{3}{2},\\infty)$",  "is_correct": false },
+            { "text": "$[\\tfrac{3}{2},\\infty)$",                   "is_correct": false },
+            { "text": "$(-1,1]\\cup[\\tfrac{3}{2},\\infty)$",        "is_correct": true  },
+            { "text": "$[1,\\infty)$",                               "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Nerovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "M je množina všetkých dvojciferných prirodzených čísel, ktoré sú deliteľné štyrmi a šiestimi, a nie sú deliteľné ôsmimi. Vyberte množinu $M$.",
+        "choices": [
+            { "text": "$M = \\{36, 72\\}$",                        "is_correct": false },
+            { "text": "$M = \\{12, 36, 60, 84\\}$",                "is_correct": true  },
+            { "text": "$M = \\varnothing$",                       "is_correct": false },
+            { "text": "$M = \\{12, 24, 36, 48, 60, 72, 84, 96\\}$","is_correct": false },
+            { "text": "$M = \\{24, 48, 72, 96\\}$",                "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Koľko je štvorciferných čísel, ktoré majú vo svojom zápise dve párne a dve nepárne cifry? (Nulu považujte za párnu cifru.)",
+        "choices": [
+            { "text": "Žiadna z ostatných odpovedí nie je správna.", "is_correct": false },
+            { "text": "$5^3 \\cdot 4$",                              "is_correct": false },
+            { "text": "$5^3 \\cdot 3^3$",                            "is_correct": true  },
+            { "text": "$10 \\cdot 10 \\cdot 5 \\cdot 5$",            "is_correct": false },
+            { "text": "$5^4$",                                       "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Kombinatorika" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Ak $\\log 3 = a$ a $\\log 4 = b$, čomu sa rovná $\\log 6$?",
+        "choices": [
+            { "text": "$\\tfrac{1}{2}ab$", "is_correct": false },
+            { "text": "$a + \\sqrt b$",    "is_correct": false },
+            { "text": "$3b$",              "is_correct": false },
+            { "text": "$a + \\tfrac b2$",   "is_correct": true  },
+            { "text": "$2a$",              "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Nájdite stý člen $a_{100}$ aritmetickej postupnosti $\\{a_n\\}_{n=1}^\\infty$, ak $a_{n+1} = a_n - \\tfrac 13$ a $a_1 = 65$.",
+        "choices": [
+            { "text": "$a_{100} = -\\tfrac{100}{3}$", "is_correct": false },
+            { "text": "$a_{100} = 32$",               "is_correct": true  },
+            { "text": "$a_{100} = \\tfrac{95}{3}$",   "is_correct": false },
+            { "text": "$a_{100} = \\tfrac{194}{3}$",  "is_correct": false },
+            { "text": "$a_{100} = 0$",                "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Postupnosti a rady reálnych čísel" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "V rovine leží priamka $p$ a bod $A$. Vzdialenosť bodu $A$ od priamky $p$ je 1. Na priamke $p$ ležia body $B$ a $C$. Trojuholník $ABC$ je rovnostranný. Aká je dĺžka strany $BC$?",
+        "choices": [
+            { "text": "$\\sqrt{\\tfrac{1}{3}}$",                          "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je správna.",       "is_correct": false },
+            { "text": "$1$",                                             "is_correct": false },
+            { "text": "$\\sqrt{\\tfrac{2}{5}}$",                          "is_correct": false },
+            { "text": "$\\sqrt{\\tfrac{2}{3}}$",                          "is_correct": true  }
+        ],
+        "areas": [
+            { "name": "Planimetria" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Rovnica $4^x - 2^x = 2$ má v $\\mathbb{R}$:",
+        "choices": [
+            { "text": "nemá žiadne riešenie.",                             "is_correct": false },
+            { "text": "má práve jedno riešenie",                           "is_correct": true  },
+            { "text": "má práve dve riešenia, ktorých súčet je 1.",       "is_correct": false },
+            { "text": "má práve dve riešenia, $x=0$ a $x=1$.",             "is_correct": false },
+            { "text": "má práve dve riešenia, ktorých súčet je $-1$.",    "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Výraz $\\frac{1-\\sqrt{a}}{1+\\sqrt{a}} \\colon \\frac{1-a}{1+a}$ sa pre $a\\ge0$, $a\\neq1$ rovná:",
+        "choices": [
+            { "text": "$1 - \\frac{2\\sqrt{a}}{1 + 2\\sqrt{a} + a}$",       "is_correct": true  },
+            { "text": "$\\frac{1+\\sqrt{a}}{1-\\sqrt{a}}$",                "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je správna",         "is_correct": false },
+            { "text": "$1 - \\frac{\\sqrt{a}}{1+a}$",                       "is_correct": false },
+            { "text": "$1$",                                              "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Spoločný menovateľ zlomkov $\\frac{x}{x+1}$, $\\frac{x}{x-2}$, $\\frac{x}{2+x-x^2}$ je:",
+        "choices": [
+            { "text": "$x^2 - x - 2$",                                   "is_correct": true  },
+            { "text": "Žiadna z ostatných odpovedí nie je správna",       "is_correct": false },
+            { "text": "$x - 2$",                                         "is_correct": false },
+            { "text": "$x$",                                             "is_correct": false },
+            { "text": "$x + 1$",                                         "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Nájdite počet priesečníkov grafu funkcie $f(x)=x^2-3x+4$ a priamky $y=x$.",
+        "choices": [
+            { "text": "Nemajú žiadny priesečník.",                       "is_correct": false },
+            { "text": "Majú práve tri priesečníky",                      "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je správna",      "is_correct": false },
+            { "text": "Majú práve jeden priesečník.",                    "is_correct": true  },
+            { "text": "Majú práve dva priesečníky.",                     "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Funkcie" },
+            { "name": "Rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Množina všetkých riešení rovnice $\\tan x = \\cot x$ je:",
+        "choices": [
+            { "text": "$\\{k\\pi;\\,k\\in\\mathbb Z\\}$",                           "is_correct": false },
+            { "text": "prázdna množina",                                           "is_correct": false },
+            { "text": "$\\{\\tfrac{\\pi}{4}+\\tfrac{k\\pi}{2};\\,k\\in\\mathbb Z\\}$", "is_correct": true  },
+            { "text": "$\\{\\tfrac{\\pi}{2}+k\\pi;\\,k\\in\\mathbb Z\\}\\cup\\{\\tfrac{\\pi}{4}+k\\pi;\\,k\\in\\mathbb Z\\}$", "is_correct": false },
+            { "text": "$\\{\\tfrac{\\pi}{4}+k\\pi;\\,k\\in\\mathbb Z\\}$",            "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Množina všetkých riešení rovnice $\\sin x = \\sqrt{3}\\cos x$ je:",
+        "choices": [
+            { "text": "$\\{k\\pi;\\,k\\in\\mathbb Z\\}\\cup\\{\\tfrac{\\pi}{3}+k\\pi;\\,k\\in\\mathbb Z\\}$", "is_correct": false },
+            { "text": "$\\{\\tfrac{\\pi}{3}+k\\pi;\\,k\\in\\mathbb Z\\}$",                                          "is_correct": true  },
+            { "text": "$\\{k\\pi;\\,k\\in\\mathbb Z\\}$",                                                        "is_correct": false },
+            { "text": "prázdna množina",                                                                        "is_correct": false },
+            { "text": "$\\{\\tfrac{\\pi}{6}+k\\pi;\\,k\\in\\mathbb Z\\}$",                                       "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Kvadratická rovnica $2x^2 + 7x - 4 = 0$ má:",
+        "choices": [
+            { "text": "Práve dve riešenia, ktorých súčet je číslo $-7$.",           "is_correct": false },
+            { "text": "Práve dve záporné riešenia.",                                "is_correct": false },
+            { "text": "Práve dve riešenia, ktorých súčin je číslo $-2$.",          "is_correct": true  },
+            { "text": "Práve dve riešenia, ktorých súčin je číslo $-4$.",          "is_correct": false },
+            { "text": "Práve dve kladné riešenia.",                                "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Zámok s číselníkom má trojciferný kód $ABC$. Každá cifra je z množiny $\\{0,1,2,3,4,5,6,7,8,9\\}$. Koľko je rôznych kódov, ak kód má najviac dve rovnaké cifry?",
+        "choices": [
+            { "text": "$10^3$",                                                     "is_correct": false },
+            { "text": "990",                                                        "is_correct": true  },
+            { "text": "$103$",                                                      "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je správna.",                 "is_correct": false },
+            { "text": "$10\\cdot9\\cdot8$",                                         "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Kombinatorika" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Rovnica $4^x + 2^x = 6$ má v $\\mathbb R$:",
+        "choices": [
+            { "text": "nemá žiadne riešenie.",                                      "is_correct": false },
+            { "text": "má práve dve riešenia, ktorých súčet je $-1$.",               "is_correct": false },
+            { "text": "má práve jedno riešenie.",                                   "is_correct": true  },
+            { "text": "má dve riešenia, ktorých súčin je $6$.",                     "is_correct": false },
+            { "text": "má riešenia $x=2$ a $x=-3$.",                                 "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Riešte nerovnicu $\\frac{3x^2+8x+3}{x-1} \\ge 1$. Množina všetkých jej riešení je:",
+        "choices": [
+            { "text": "$(−∞,−\\tfrac{4}{3}]\\cup(−1,1)$",                           "is_correct": false },
+            { "text": "$[−\\tfrac{4}{3},−1]\\cup(1,∞)$",                             "is_correct": true  },
+            { "text": "$[−\\tfrac{4}{3},−1]$",                                       "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je správna.",                 "is_correct": false },
+            { "text": "$(−∞,−\\tfrac{4}{3}]$",                                       "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Nerovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Výraz $\\dfrac{1+\\sqrt{a}}{1-\\sqrt{a}} : \\dfrac{1+a}{1-a}$ sa pre $a\\ge0$, $a\\neq1$ rovná výrazu",
+        "choices": [
+            { "text": "$\\dfrac{1-\\sqrt{a}}{1+\\sqrt{a}}$",                        "is_correct": false },
+            { "text": "$1$",                                                        "is_correct": false },
+            { "text": "$\\dfrac{1+2\\sqrt{a}}{1+a}$",                               "is_correct": true  },
+            { "text": "$1-\\dfrac{\\sqrt{a}}{1+a}$",                                 "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je správna.",                 "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Ak $\\log 3 = a$ a $\\log 2 = b$, čomu sa rovná $\\log 18$?",
+        "choices": [
+            { "text": "$a^2\\cdot b$",                                              "is_correct": false },
+            { "text": "Nedá sa jednoznačne určiť.",                                 "is_correct": false },
+            { "text": "$2a + b$",                                                   "is_correct": true  },
+            { "text": "$2ab$",                                                      "is_correct": false },
+            { "text": "$a^2 + b$",                                                  "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Je daná lineárna funkcia $f(x)=2x-4$. Nájdite jej nulové body.",
+        "choices": [
+            { "text": "Má dva nulové body: $-4$ a $2$.",                             "is_correct": false },
+            { "text": "Má jeden nulový bod: $-4$.",                                  "is_correct": false },
+            { "text": "Nemá žiaden nulový bod.",                                    "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je pravdivá.",                "is_correct": false },
+            { "text": "Má jeden nulový bod: $2$.",                                   "is_correct": true  }
+        ],
+        "areas": [
+            { "name": "Funkcie" },
+            { "name": "Rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Rovnica $\\sqrt{-2x^2+2x-3} = \\sqrt{-3x}$ má v $\\mathbb R$:",
+        "choices": [
+            { "text": "má práve dva iracionálne korene.",                           "is_correct": false },
+            { "text": "nemá žiadne riešenie.",                                      "is_correct": true  },
+            { "text": "má práve jeden celočíselný koreň.",                          "is_correct": false },
+            { "text": "má práve dva korene, ktorých súčet je $\\tfrac{5}{2}$.",     "is_correct": false },
+            { "text": "má práve dva korene, ktorých súčin je $-\\tfrac{3}{2}$.",     "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Rovnice" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "V rovine ležia $4$ priamky. Týmito priamkami môže byť rovina rozdelená na najviac $n$ častí. Nájdite $n$.",
+        "choices": [
+            { "text": "$n = 10$", "is_correct": false },
+            { "text": "$n = 8$", "is_correct": false },
+            { "text": "$n = 12$", "is_correct": false },
+            { "text": "$n = 9$", "is_correct": false },
+            { "text": "$n = 11$", "is_correct": true }
+        ],
+        "areas": [
+            { "name": "Kombinatorika" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Nájdite počet priesečníkov grafu funkcie $f(x) = x^2 - 3x + 1$ a priamky $y = x - 4$.",
+        "choices": [
+            { "text": "Majú práve tri priesečníky", "is_correct": false },
+            { "text": "Nemajú žiadny priesečník.", "is_correct": true },
+            { "text": "Majú práve jeden priesečník", "is_correct": false },
+            { "text": "Žiadna z ostatných odpovedí nie je správna", "is_correct": false },
+            { "text": "Majú práve dva priesečníky.", "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Rovnice" },
+            { "name": "Funkcie" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Spoločný menovateľ zlomkov $\\frac{x}{x+1}$, $\\frac{x}{x^2 - 1}$, $\\frac{x+1}{2+x}$ je",
+        "choices": [
+            { "text": "$x^2 - 1$", "is_correct": false },
+            { "text": "$x + 1$", "is_correct": false },
+            { "text": "$x\\cdot(x+1)$", "is_correct": false },
+            { "text": "$x^3 + 2x^2 - x - 2$", "is_correct": true },
+            { "text": "Žiadna z ostatných odpovedí nemá danú vlastnosť.", "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Funkcie" },
+            { "name": "Rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Výrok: Ak študent maturoval z informatiky $(I)$, tak nematuroval z matematiky $(M)$ alebo nematuroval z fyziky $(F)$, je ekvivalentný s výrokom:",
+        "choices": [
+            { "text": "Študent maturoval buď zo všetkých troch predmetov $F, I, M$, alebo zo žiadneho z nich.", "is_correct": false },
+            { "text": "Študent maturoval aspoň z jedného z predmetov $F, I, M$", "is_correct": false },
+            { "text": "Študent maturoval najviac z jedného z predmetov $F, I, M$.", "is_correct": false },
+            { "text": "Študent maturoval aspoň z dvoch z predmetov $F, I, M$.", "is_correct": false },
+            { "text": "Študent maturoval najviac z dvoch z predmetov $F, I, M$.", "is_correct": true }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Každý prvok množiny $M$ je prirodzené číslo, ktoré buď je deliteľné tromi a nie je deliteľné jedenástimi, alebo nie je deliteľné tromi a je deliteľné jedenástimi. Vyberte množinu s touto vlastnosťou.",
+        "choices": [
+            { "text": "$M = \\{11,22,33\\}$", "is_correct": false },
+            { "text": "Žiadna z množín v ostatných odpovediach nemá danú vlastnosť.", "is_correct": false },
+            { "text": "$M = \\{75,121,758961\\}$", "is_correct": true },
+            { "text": "$M = \\{174,2772,358479\\}$", "is_correct": false },
+            { "text": "$M = \\{675,12549,257866\\}$", "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Nájdite súčet prvých štyroch členov $a_1 + a_2 + a_3 + a_4$ aritmetickej postupnosti $\\{a_n\\}_{n=1}^\\infty$, ak viete, že $a_2 + a_3 = 8$.",
+        "choices": [
+            { "text": "Z uvedených údajov sa to nedá vypočítať.", "is_correct": false },
+            { "text": "$a_1 + a_2 + a_3 + a_4 = 8$", "is_correct": false },
+            { "text": "$a_1 + a_2 + a_3 + a_4 = 16$", "is_correct": true },
+            { "text": "$a_1 + a_2 + a_3 + a_4 = 12$", "is_correct": false },
+            { "text": "$a_1 + a_2 + a_3 + a_4 = 20$", "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Postupnosti a rady reálnych čísel" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "V rovine ležia dva trojuholníky. Ich prienik je úsečka. Ich zjednotením je:",
+        "choices": [
+            { "text": "Trojuholník alebo štvoruholník", "is_correct": false },
+            { "text": "Trojuholník, štvoruholník, paťuholník alebo šesťuholník", "is_correct": true },
+            { "text": "Trojuholník, štvoruholník alebo paťuholník", "is_correct": false },
+            { "text": "Trojuholník", "is_correct": false },
+            { "text": "Štvoruholník", "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Planimetria" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Graf funkcie $f(x) = 3x^2 - 5x + 2$",
+        "choices": [
+            { "text": "leží celý nad osou $x$", "is_correct": false },
+            { "text": "leží celý pod osou $x$", "is_correct": false },
+            { "text": "žiadna z ostatných odpovedí nie je správna", "is_correct": false },
+            { "text": "pretína os $x$ v dvoch bodoch", "is_correct": true },
+            { "text": "sa dotýka osi $x$ v jednom bode", "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Funkcie" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Rovnica $|x - 2| = 5$ má množinu riešení",
+        "choices": [
+            { "text": "$\\{1,5\\}$", "is_correct": false },
+            { "text": "$\\{7\\}$", "is_correct": false },
+            { "text": "$\\{2,5\\}$", "is_correct": false },
+            { "text": "$\\{-3,2,7\\}$", "is_correct": false },
+            { "text": "$\\{-3,7\\}$", "is_correct": true }
+        ],
+        "areas": [
+            { "name": "Rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Kvadratický trojčlen $3x^2 + 9x - 12$ má rozklad",
+        "choices": [
+            { "text": "$3(x+1)(x-4)$", "is_correct": false },
+            { "text": "$(x-3)(x+4)$", "is_correct": false },
+            { "text": "$3(x-1)(x+4)$", "is_correct": true },
+            { "text": "$3(x+1)(x+4)$", "is_correct": false },
+            { "text": "$3(x-2)(x+2)$", "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Kvadratický trojčlen $3x^2 + 9x - 12$ má rozklad",
+        "choices": [
+            { "text": "$3(x+1)(x-4)$", "is_correct": false },
+            { "text": "$(x-3)(x+4)$", "is_correct": false },
+            { "text": "$3(x-1)(x+4)$", "is_correct": true },
+            { "text": "$3(x+1)(x+4)$", "is_correct": false },
+            { "text": "$3(x-2)(x+2)$", "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
+        ]
+    },
+
+    {
+        "type": "TEXT",
+        "question_text": "Kvadratický trojčlen $30x^2 + 11x - 30$ sa dá v $\\mathbb{R}$ rozložiť na súčin lineárnych činiteľov",
+        "correct_answer": "30*(x - 56)*(x + 65)",
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
+        ]
+    },
+    {
+        "type": "TEXT",
+        "question_text": "Množina koreňov rovnice $|x + 2| = 2|x - 1| - 4$ sa rovná",
+        "correct_answer": "K={-4/3,8}",
+        "areas": [
+            { "name": "Rovnice" }
+        ]
+    },
+    {
+        "type": "TEXT",
+        "question_text": "Riešením nerovnice $\\sqrt{x^2} + 2x^2 \\le (x+1)^2 + 1$ v $\\mathbb{N}$ je",
+        "correct_answer": "P = {1,2}",
+        "areas": [
+            { "name": "Nerovnice" }
+        ]
+    },
+    {
+        "type": "TEXT",
+        "question_text": "Veža je postavená tak, že nasledujúce poschodie má $\\tfrac{9}{10}$ výšky predchádzajúceho poschodia. Najmenej koľko poschodí treba vystavať, aby výška veže bola väčšia ako $25\\,\\mathrm{m}$, ak prvé poschodie má výšku $5\\,\\mathrm{m}$?",
+        "correct_answer": "7",
+        "areas": [
+            { "name": "Postupnosti a rady reálnych čísel" }
+        ]
+    },
+    {
+        "type": "TEXT",
+        "question_text": "Existujú štyri krvné skupiny $A$, $B$, $AB$, $0$. Ak rozdelíme $10$ osôb podľa uvedených krvných skupín, počet možných rozdelení sa rovná",
+        "correct_answer": "286",
+        "areas": [
+            { "name": "Kombinatorika" }
+        ]
+    },
+    {
+        "type": "TEXT",
+        "question_text": "Na poličke v kníhkupectve je päť rovnakých slovenských kníh, tri rovnaké nemecké knihy a dve rovnaké anglické knihy. Počet spôsobov, ktorými možno knihy na poličke zoradiť, sa rovná",
+        "correct_answer": "2520",
+        "areas": [
+            { "name": "Kombinatorika" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Kvadratický trojčlen $30x^2 + 11x - 30$ sa dá v $\\mathbb{R}$ rozložiť na súčin lineárnych činiteľov. Označte jednu odpoveď:",
+        "choices": [
+            { "text": "sa nedá v $\\mathbb{R}$ rozložiť", "is_correct": false },
+            { "text": "$30\\bigl(x - \\tfrac{5}{6}\\bigr)\\bigl(x + \\tfrac{2}{5}\\bigr)$", "is_correct": false },
+            { "text": "$(x - \\tfrac{5}{6})(x - \\tfrac{6}{5})$", "is_correct": false },
+            { "text": "$(x - \\tfrac{4}{6})(x + \\tfrac{6}{5})$", "is_correct": false },
+            { "text": "$30\\bigl(x - \\tfrac{5}{6}\\bigr)\\bigl(x + \\tfrac{6}{5}\\bigr)$", "is_correct": true }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Množina koreňov rovnice $|x + 2| = 2|x - 1| - 4$ sa rovná:",
+        "choices": [
+            { "text": "$K = \\{ -\\tfrac{4}{7},\\,9 \\}$", "is_correct": false },
+            { "text": "$K = \\{ \\tfrac{4}{3},\\,8 \\}$", "is_correct": false },
+            { "text": "$K = \\{ -\\tfrac{4}{3},\\,8 \\}$", "is_correct": true },
+            { "text": "$K = \\{ -\\tfrac{4}{3},\\,7 \\}$", "is_correct": false },
+            { "text": "$K = \\{ -\\tfrac{5}{3},\\,8 \\}$", "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Rovnice" }
+        ]
+    },
+    {
+        "type": "MCQ",
+        "question_text": "Množina koreňov rovnice $\\displaystyle\\frac{x - 3}{x} = \\frac{p - 2}{3 - p}$ s neznámou $x$ a parametrom $p$ sa rovná:",
+        "choices": [
+            {
+                "text": "$K_p = \\{\\tfrac{2p - 5}{3p - 9}\\},\\;\\text{pre }p\\neq3;\\;K_3 = \\emptyset$",
+                "is_correct": false
+            },
+            {
+                "text": "$K_p = \\{\\tfrac{3p - 6}{2p - 6}\\},\\;\\text{pre }p\\neq3;\\;K_3 = \\{\\tfrac{8}{3}\\}$",
+                "is_correct": false
+            },
+            {
+                "text": "$K_p = \\{\\tfrac{3p - 9}{2p - 5}\\},\\;\\text{pre }p\\neq3\\land p\\neq\\tfrac{5}{2};\\;K_{5/2} = \\emptyset$",
+                "is_correct": true
+            },
+            {
+                "text": "$K_p = \\{\\tfrac{p - 9}{p - 5}\\},\\;\\text{pre }p\\neq3\\land p\\neq5;\\;K_5 = \\emptyset$",
+                "is_correct": false
+            },
+            {
+                "text": "$K_p = \\{\\tfrac{p - 9}{2p - 7}\\},\\;\\text{pre }p\\neq3\\land p\\neq\\tfrac{7}{2};\\;K_{7/2} = \\emptyset$",
+                "is_correct": false
+            }
+        ],
+        "areas": [
+            { "name": "Rovnice" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Množina koreňov rovnice $3\\bigl(\\sqrt{x^2 + 13} - \\sqrt{x^2 - 11}\\bigr) = x$ sa rovná:",
+        "choices": [
+            { "text": "$K = \\{6\\}$",        "is_correct": true  },
+            { "text": "$K = \\{-6,6\\}$",    "is_correct": false },
+            { "text": "$K = \\{5\\}$",        "is_correct": false },
+            { "text": "$K = \\{-6\\}$",       "is_correct": false },
+            { "text": "$K = \\{-2,7\\}$",     "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Rovnice" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Riešenie rovnice $\\dfrac{1}{\\sqrt{\\sqrt{x} + 10}} = \\dfrac{1}{\\sqrt{25 - 2\\sqrt{x}}}$ v $\\mathbb{R}$ sa rovná:",
+        "choices": [
+            { "text": "$K = \\{25\\}$",  "is_correct": true  },
+            { "text": "$K = \\{9\\}$",   "is_correct": false },
+            { "text": "$K = \\{-4\\}$",  "is_correct": false },
+            { "text": "$K = \\{16\\}$",  "is_correct": false },
+            { "text": "$K = \\{125\\}$", "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Rovnice" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Trezor má zámok s piatimi kotúčmi, na ktorých sú čísla $0,1,2,\\dots,9$. Zámok sa otvorí na heslo, ktorým je správna voľba ľubovoľnej cifry na každom z kotúčov. Pokladník zabudol heslo, pamätá si len, že na prvom mieste nebola cifra $0$ ani cifra $1$. Počet možností pre vyskúšanie správnej kombinácie čísel sa rovná:",
+        "choices": [
+            { "text": "$99\\cdot10^3$",               "is_correct": false },
+            { "text": "$8\\cdot10^4$",                "is_correct": true  },
+            { "text": "$8!$",                        "is_correct": false },
+            { "text": "$9\\cdot10^4$",               "is_correct": false },
+            { "text": "$8\\cdot\\binom{10}{4}$",     "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Kombinatorika" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Na kruhovom ciferníku hodín zvierajú priamka spájajúca cifry $1$ a $6$ a priamka spájajúca cifry $2$ a $9$ uhol:",
+        "choices": [
+            { "text": "$90^\\circ$", "is_correct": false },
+            { "text": "$45^\\circ$", "is_correct": false },
+            { "text": "$30^\\circ$", "is_correct": false },
+            { "text": "$60^\\circ$", "is_correct": true  },
+            { "text": "$75^\\circ$", "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Planimetria" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Trojuholník má plošný obsah $P = 3 + \\sqrt{3}$ a jeho uhly sú $\\alpha = 45^\\circ$, $\\beta = 60^\\circ$. Dĺžky strán trojuholníka sa rovnajú:",
+        "choices": [
+            { "text": "$2,\\,3,\\,6$",                                    "is_correct": false },
+            { "text": "$2,\\,3,\\,4$",                                    "is_correct": false },
+            { "text": "$\\sqrt{2},\\,\\sqrt{3},\\,\\sqrt{3}+\\sqrt{2}$",   "is_correct": false },
+            { "text": "$2,\\,3,\\,5$",                                    "is_correct": false },
+            { "text": "$2\\sqrt{2},\\,2\\sqrt{3},\\,\\sqrt{6}+\\sqrt{2}$", "is_correct": true  }
+        ],
+        "areas": [
+            { "name": "Planimetria" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "V pravoúhlom trojuholníku $ABC$ sú odvesny $a=15$, $b=20$. Polomery opisanej kružnice $r$ a vpísanej kružnice $\\rho$ sa rovnajú:",
+        "choices": [
+            { "text": "$r = 20,\\;\\rho = 5$",            "is_correct": false },
+            { "text": "$r = \\tfrac{25}{2},\\;\\rho = 5$", "is_correct": true  },
+            { "text": "$r = 15,\\;\\rho = 7$",            "is_correct": false },
+            { "text": "$r = \\tfrac{35}{2},\\;\\rho = 6$", "is_correct": false },
+            { "text": "$r = 16,\\;\\rho = 8$",            "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Planimetria" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Nech $A'=(2,1)$, $B'=(5,3)$, $C'=(3,-4)$ sú stredy protiľahlých strán trojuholníka $ABC$. Potom vrcholy $A,B,C$ majú súradnice:",
+        "choices": [
+            { "text": "$A=(-6,2),\\;B=(0,-6),\\;C=(-4,8)$",   "is_correct": false },
+            { "text": "$A=(6,2),\\;B=(0,6),\\;C=(4,8)$",      "is_correct": false },
+            { "text": "$A=(6,-2),\\;B=(0,-6),\\;C=(4,8)$",    "is_correct": true  },
+            { "text": "$A=(-6,-2),\\;B=(0,6),\\;C=(-4,-8)$",  "is_correct": false },
+            { "text": "$A=(-6,2),\\;B=(0,6),\\;C=(4,8)$",     "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Vektorová algebra a analytická geometria v rovine" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Rovnica kružnice prechádzajúcej bodmi $A=(1,1)$, $B=(1,-1)$, $C=(2,0)$ je:",
+        "choices": [
+            { "text": "$x^2 + (y-1)^2 = 1$",             "is_correct": false },
+            { "text": "$x^2 + y^2 = 1$",                  "is_correct": false },
+            { "text": "$(x-1)^2 - y^2 = 1$",              "is_correct": false },
+            { "text": "$(x-1)^2 + (y+1)^2 = 1$",          "is_correct": false },
+            { "text": "$(x-1)^2 + y^2 = 1$",              "is_correct": true  }
+        ],
+        "areas": [
+            { "name": "Vektorová algebra a analytická geometria v rovine" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Rovnica hyperboly so stredom v začiatku, s ohniskami na osi $o_y$, na ktorej leží bod $M=(-1,\\tfrac{9}{2})$ a ktorej asymptoty majú rovnice $y=\\pm\\tfrac{3}{2}x$, je:",
+        "choices": [
+            { "text": "$\\dfrac{x^2}{18} + \\dfrac{y^2}{8} = 1$",       "is_correct": false },
+            { "text": "taká hyperbola neexistuje",                      "is_correct": false },
+            { "text": "$\\dfrac{x^2}{18} - \\dfrac{y^2}{8} = 1$",       "is_correct": false },
+            { "text": "$\\dfrac{y^2}{18} - \\dfrac{x^2}{8} = 1$",       "is_correct": true  },
+            { "text": "$\\dfrac{y^2}{25} - \\dfrac{x^2}{9} = 1$",       "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Vektorová algebra a analytická geometria v rovine" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Parabola prechádzajúca bodom $A=(-5,4)$ má dotyčnicu s rovnicou $y-3=0$ vo svojom vrchole. Jej os má rovnicu $x+7=0$. Rovnica paraboly je:",
+        "choices": [
+            { "text": "$(x-3)^2=4(y+7)$",  "is_correct": false },
+            { "text": "$(x+7)^2=4(y-3)$",  "is_correct": true  },
+            { "text": "$(x+3)^2=4(y-7)$",  "is_correct": false },
+            { "text": "$(x+7)^2=4(y-5)$",  "is_correct": false },
+            { "text": "$(x-7)^2=4(y+3)$",  "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Vektorová algebra a analytická geometria v rovine" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Objem zrezaného kužeľa, ktorého podstavy sú kruhy opísané a vpísané dvom rovnobežným stenám kocky s dĺžkou hrany $a$, sa rovná:",
+        "choices": [
+            { "text": "$V = \\tfrac{1}{12}\\pi a^3$",                                    "is_correct": false },
+            { "text": "$V = \\tfrac{1}{12}\\pi\\sqrt{2}\\,a^3$",                          "is_correct": false },
+            { "text": "$V = \\tfrac{1}{12}\\pi a^3\\,(3 + \\sqrt{2})$",                   "is_correct": true  },
+            { "text": "$V = \\tfrac{1}{4}\\pi a^3$",                                     "is_correct": false },
+            { "text": "$V = \\tfrac{1}{4}\\pi\\sqrt{2}\\,a^3$",                           "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Stereometria" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Rovnica roviny $\\alpha$, ktorá obsahuje bod $A=[2,-1,-4]$ a je kolmá na priamku $p:\\ [x,y,z]=[3-2t,t,7]$, je:",
+        "choices": [
+            { "text": "$-2x + y + 4 = 0$",  "is_correct": false },
+            { "text": "$2x - 3y - 15 = 0$", "is_correct": false },
+            { "text": "$2x - y - 5 = 0$",   "is_correct": true  },
+            { "text": "$-x + 2y + 5 = 0$",  "is_correct": false },
+            { "text": "$x - 2y - 5 = 0$",   "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Stereometria" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Rovnica priamky $p$, ktorá prechádza bodom $P=[-5,1,0]$ a je kolmá na priamku $q:\\[x,y,z\\]=[3t,1-2t,-4+t]$, s ktorou je rôznobežná, je:",
+        "choices": [
+            {
+                "text": "$p:\\ [x,y,z]=[-5+3t,\\,1+t,\\,7t]$",
+                "is_correct": false
+            },
+            {
+                "text": "$p:\\ [x,y,z]=[-5+7t,\\,1+2t,\\,-6t]$",
+                "is_correct": false
+            },
+            {
+                "text": "$p:\\ [x,y,z]=[-5+27t,\\,1+22t,\\,-67t]$",
+                "is_correct": false
+            },
+            {
+                "text": "$p:\\ [x,y,z]=[-5+t,\\,1+2t,\\,6t]$",
+                "is_correct": false
+            },
+            {
+                "text": "$p:\\ [x,y,z]=[-5+37t,\\,1+22t,\\,-67t]$",
+                "is_correct": true
+            }
+        ],
+        "areas": [
+            { "name": "Stereometria" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Rovnica dotykovej roviny ku guľovej ploche $(x+1)^2 + (y-4)^2 + (z-2)^2 = 25$, ktorá je rovnobežná s rovinou $\\alpha:\\,x - 8y - 4z + 7 = 0$, sa rovná:",
+        "choices": [
+            {
+                "text": "$x - 8y - 4z + 4 = 0,\\;x - 8y - 4z - 86 = 0$",
+                "is_correct": false
+            },
+            {
+                "text": "$x - 8y - 4z - 6 = 0,\\;x - 8y - 4z + 6 = 0$",
+                "is_correct": false
+            },
+            {
+                "text": "$x - 8y - 4z - 5 = 0,\\;x - 8y - 4z + 25 = 0$",
+                "is_correct": false
+            },
+            {
+                "text": "$x - 8y - 4z - 4 = 0,\\;x - 8y - 4z + 86 = 0$",
+                "is_correct": true
+            },
+            {
+                "text": "$x - 8y - 4z - 10 = 0,\\;x - 8y - 4z + 10 = 0$",
+                "is_correct": false
+            }
+        ],
+        "areas": [
+            { "name": "Stereometria" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Výraz $\\bigl(\\frac{a}{a+b} - \\frac{b}{b-a} - \\frac{2ab}{a^2 - b^2}\\bigr)\\bigl(a - \\frac{4ab}{a+b} + b\\bigr)^{-1}$ sa rovná:",
+        "choices": [
+            { "text": "$\\frac{1}{a - b},\\;a\\neq b,\\;a\\neq -b$",  "is_correct": true  },
+            { "text": "$\\frac{1}{a + b},\\;a\\neq b,\\;a\\neq -b$",  "is_correct": false },
+            { "text": "$a + b,\\;a\\neq b,\\;a\\neq -b$",            "is_correct": false },
+            { "text": "$\\frac{1}{a + b},\\;a\\neq 0,\\;b\\neq 0$",  "is_correct": false },
+            { "text": "$a - b,\\;a\\neq b,\\;a\\neq -b$",            "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Základné pojmy. Úpravy algebrických výrazov." }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Rovnica $\\log_{4}(x + 12) \\cdot \\log_{x}2 = 1$ má v $\\mathbb{R}$ riešenie:",
+        "choices": [
+            { "text": "$K = \\{4\\}$",     "is_correct": true  },
+            { "text": "žiadna z uvedených možností", "is_correct": false },
+            { "text": "$K = \\{-3,4\\}$",  "is_correct": false },
+            { "text": "$K = \\emptyset$",  "is_correct": false },
+            { "text": "$K = \\{0\\}$",     "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Riešením rovnice $\\dfrac{\\cos2x}{\\cos^2x} = 1 - \\dfrac{2\\sin^2x}{\\sin2x}$ v $\\mathbb{R}$ je:",
+        "choices": [
+            { "text": "$K = \\{k\\pi,\\,\\tfrac{\\pi}{4} + k\\pi;\\,k\\in\\mathbb{Z}\\}$",     "is_correct": true  },
+            { "text": "$K = \\{k\\pi,\\,\\tfrac{\\pi}{4} + 2k\\pi;\\,k\\in\\mathbb{Z}\\}$",   "is_correct": false },
+            { "text": "$K = \\{\\tfrac{\\pi}{4} + 2k\\pi;\\,k\\in\\mathbb{Z}\\}$",            "is_correct": false },
+            { "text": "$K = \\{\\tfrac{\\pi}{4} + k\\pi;\\,k\\in\\mathbb{Z}\\}$",             "is_correct": false },
+            { "text": "$K = \\{2k\\pi,\\,\\tfrac{\\pi}{4} + k\\pi;\\,k\\in\\mathbb{Z}\\}$",   "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" },
+            { "name": "Rovnice" }
+        ]
+    },
+
+    {
+        "type": "MCQ",
+        "question_text": "Prvý člen a kvocient geometrickej postupnosti, pre ktorú platí: $a_1 - 2a_3 = 9$, $a_1\\cdot a_3 = 2916$, sa rovnajú:",
+        "choices": [
+            { "text": "$a_1 = -64,\\;q = -\\tfrac{2}{3},\\;a_1 = 49,\\;q = \\tfrac{3}{4}$", "is_correct": false },
+            { "text": "$a_1 = -36,\\;q = -\\tfrac{2}{3},\\;a_1 = 25,\\;q = \\pm\\tfrac{3}{4}$", "is_correct": false },
+            { "text": "$a_1 = 81,\\;q = \\pm\\tfrac{2}{3},\\;a_1 = -72,\\;q = \\pm\\tfrac{3}{4}$", "is_correct": true },
+            { "text": "$a_1 = 64,\\;q = \\tfrac{2}{3},\\;a_1 = -49,\\;q = -\\tfrac{3}{4}$", "is_correct": false },
+            { "text": "$a_1 = 36,\\;q = \\pm\\tfrac{2}{3},\\;a_1 = -25,\\;q = \\pm\\tfrac{3}{4}$", "is_correct": false }
+        ],
+        "areas": [
+            { "name": "Postupnosti a rady reálnych čísel" }
+        ]
+    },
+
+    {
+        "type": "TEXT",
+        "question_text": "Riešením rovnice $\\log_{x-1}8 = 3$ je",
+        "correct_answer": "x = 3",
+        "areas": [
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" },
+            { "name": "Rovnice" }
+        ]
+    },
+
+    {
+        "type": "TEXT",
+        "question_text": "Riešením rovnice $\\frac{1}{5^{2x-1}} = 25$ je",
+        "correct_answer": "x = -1/2",
+        "areas": [
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" },
+            { "name": "Rovnice" }
+        ]
+    },
+
+    {
+        "type": "TEXT",
+        "question_text": "V rovine ležia $4$ priamky. Týmito priamkami môže byť rovina rozdelená na najviac $n$ častí. Nájdite $n$.",
+        "correct_answer": "n = 11",
+        "areas": [
+            { "name": "Kombinatorika" }
+        ]
+    },
+
+    {
+        "type": "TEXT",
+        "question_text": "Zámok s číselníkom má trojciferný kód $ABC$. Každá cifra je z množiny $\\{0,1,2,3,4,5,6,7,8,9\\}$. Koľko je rôznych kódov, ak vieme, že kód má najviac dve cifry rovnaké?",
+        "correct_answer": "990",
+        "areas": [
+            { "name": "Kombinatorika" }
+        ]
+    },
+
+    {
+        "type": "TEXT",
+        "question_text": "Koľko je $4$-ciferných čísel, ktoré majú vo svojom zápise všetky cifry rôzne?",
+        "correct_answer": "4536",
+        "areas": [
+            { "name": "Kombinatorika" }
+        ]
+    },
+
+    {
+        "type": "TEXT",
+        "question_text": "Dĺžky uhlopriečok kosoštvorca sú $6$ cm a $8$ cm. Jeho obvod je",
+        "correct_answer": "20 cm",
+        "areas": [
+            { "name": "Planimetria" }
+        ]
+    },
+
+    {
+        "type": "TEXT",
+        "question_text": "Ak $\\log 3 = a$ a $\\log 2 = b$, čomu sa rovná $\\log 12$?",
+        "correct_answer": "a + 2*b",
+        "areas": [
+            { "name": "Exponenciálne, logaritmické a goniometrické rovnice" },
+            { "name": "Rovnice" }
+        ]
+
     }
+
 ]
