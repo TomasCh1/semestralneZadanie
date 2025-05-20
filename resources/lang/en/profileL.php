@@ -1,5 +1,6 @@
 <?php
 return[
+    'title' => 'Profile',
     'info' => 'Profile Information',
     'update' => "Update your account's profile information and email address",
     'name' => 'Meno',

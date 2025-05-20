@@ -1,5 +1,6 @@
 <?php
 return[
+    'title' => 'Profil',
     'info' => 'Údaje o uživateľovi',
     'update' => "Aktualizujte si informácie o uživateľovi a emailovú adresu",
     'name' => 'Meno',
