@@ -61,3 +61,5 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=5s \
 
 # 2.10) Štart PHP-FPM
 CMD ["php-fpm"]
+
+RUN composer require torann/geoip
