@@ -1,3 +1,23 @@
+@push('head')
+    {{-- KaTeX: CSS + JS + auto-render, načíta sa len na tejto stránke --}}
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: "$", right: "$", display: true },
+                    { left: "\\", right: "\\", display: false }
+                ],
+                throwOnError: false        // ak je vo vzorci preklep, stránka nespadne
+            });
+        });
+    </script>
+@endpush
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl">Výsledky testu</h2>
