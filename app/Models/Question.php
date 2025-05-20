@@ -24,10 +24,11 @@ class Question extends Model
 
     /* ────────  VZŤAHY  ──────── */
 
-    public function choices(): HasMany
+    public function choices()
     {
         return $this->hasMany(Choice::class, 'question_id', 'question_id');
     }
+
 
     public function runs(): HasMany
     {
@@ -53,4 +54,5 @@ if ($this->type === self::TYPE_MCQ) {
                 preg_replace('/\s+/', '', $this->correct_answer)
             ) === 0;
     }
+
 }
