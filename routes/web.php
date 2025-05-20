@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestRunController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\LocaleController;
-use App\Http\Controllers\TestHistoryController;
+use App\Http\Controllers\Admin\HistoryController;
 
 
 Route::get('/', function () {
@@ -16,13 +16,16 @@ Route::middleware('guest')->group(function () {
     Route::view('/', 'auth.index');
     Route::view('dashboard', 'dashboard');
 });
-Route::get('/history', [TestHistoryController::class, 'index'])->name('history');
+
+//Route::get('/history', [TestHistoryController::class, 'index'])->name('history');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
 Route::middleware('auth')->group(function () {
+    // Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -32,9 +35,9 @@ Route::middleware('auth')->group(function () {
         ->name('test-runs.start');
 
 });
+
 Route::get('locale/{locale}', [LocaleController::class, 'switch'])
     ->name('locale.switch');
-
 
 Route::middleware('web')->group(function () {
 
@@ -48,3 +51,26 @@ Route::middleware('web')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+//Admin Routes
+
+Route::prefix('admin')
+    ->name('admin.')
+    ->middleware(['auth'])
+    ->group(function () {
+        // List all test runs
+        Route::get('history', [HistoryController::class, 'index'])
+            ->name('history.index');
+
+        // Export history to CSV
+        Route::get('history/export', [HistoryController::class, 'export'])
+            ->name('history.export');
+
+        // Show a single test run (so GET /admin/history/{run} is allowed)
+        Route::get('history/{run}',       [HistoryController::class, 'show'])
+            ->name('history.show');
+
+        // Delete a single record
+        Route::delete('history/{run}', [HistoryController::class, 'destroy'])
+            ->name('history.destroy');
+    });
