@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">{{ __('Test History') }}</h2>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">{{ __('historyL.title') }}</h2>
 
     </x-slot>
     <div class="py-8 mt-2">
@@ -15,12 +15,12 @@
                             <table class="min-w-full divide-y divide-gray-200 text-sm">
                                 <thead class="bg-gray-100">
                                 <tr>
-                                    <th class="px-4 py-2 text-left text-gray-600">Date</th>
-                                    <th class="px-4 py-2 text-left text-gray-600">Correct</th>
-                                    <th class="px-4 py-2 text-left text-gray-600">Total</th>
-                                    <th class="px-4 py-2 text-left text-gray-600">Score (%)</th>
-                                    <th class="px-4 py-2 text-left text-gray-600">City</th>
-                                    <th class="px-4 py-2 text-left text-gray-600">State</th>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('historyL.date')}}</th>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('historyL.correct')}}</th>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('historyL.total')}}</th>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('historyL.score')}}</th>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('historyL.city')}}</th>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('historyL.state')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200">
