@@ -1427,7 +1427,7 @@
 
     {
         "type": "MCQ",
-        "question_text": "Rovnica priamky $p$, ktorá prechádza bodom $P=[-5,1,0]$ a je kolmá na priamku $q:\\[x,y,z\\]=[3t,1-2t,-4+t]$, s ktorou je rôznobežná, je:",
+        "question_text": "Rovnica priamky $p$, ktorá prechádza bodom $P=[-5,1,0]$ a je kolmá na priamku $q=[x,y,z]=[3t,1-2t,-4+t]$, s ktorou je rôznobežná, je:",
         "choices": [
             {
                 "text": "$p:\\ [x,y,z]=[-5+3t,\\,1+t,\\,7t]$",
