@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestRunController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\TestHistoryController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,6 +16,7 @@ Route::middleware('guest')->group(function () {
     Route::view('/', 'auth.index');
     Route::view('dashboard', 'dashboard');
 });
+Route::get('/history', [TestHistoryController::class, 'index'])->name('history');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
