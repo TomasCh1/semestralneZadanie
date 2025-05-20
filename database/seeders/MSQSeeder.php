@@ -20,13 +20,13 @@ class MSQSeeder extends Seeder
         foreach ($items as $item) {
             // insert question
             if($item['type'] == "MCQ"){
-            $questionId = DB::table('questions')->insertGetId([
-                'type' => $item['type'],
-                'question_text'=> $item['question_text'],
-                'created_at' => $now,
-            ]);
+                $questionId = DB::table('questions')->insertGetId([
+                    'type' => $item['type'],
+                    'question_text'=> $item['question_text'],
+                    'created_at' => $now,
+                ]);
 
-            // insert translation
+                // insert translation
 
 
                 // insert choices
@@ -59,27 +59,6 @@ class MSQSeeder extends Seeder
                     'area_id' => $areaId,
                 ]);
 
-                foreach ($item['languages'] as $languageName) {
-                        $languageExist = DB::table('languages')
-                            ->where('lang_name', $languageName['lang_name'])
-                            ->first(['lang_id']);
-
-                    if($languageExist){
-                        $languageId = $languageExist->lang_id;
-                    }
-                    else{
-                        $languageId = DB::table('languages')->insertGetId([
-                            'lang_code' => $languageName['lang_code'],
-                            'lang_name' => $languageName['lang_name'],
-                        ]);
-                    }
-                    DB::table('question_translations')->insert([
-                        'question_id' => $questionId,
-                        'lang_id' => $languageId,
-                    ]);
-                }
-
-
             } else{
                 $questionId = DB::table('questions')->insertGetId([
                     'type' => $item['type'],
@@ -102,31 +81,10 @@ class MSQSeeder extends Seeder
                         'name' => $areaName['name'],
                     ]);
                 }
-
                 DB::table('question_areas')->insert([
                     'question_id' => $questionId,
                     'area_id' => $areaId,
                 ]);
-
-                foreach ($item['languages'] as $language) {
-                    $languageExist = DB::table('languages')
-                        ->where('lang_code', $language['lang_code'])
-                        ->first(['lang_id']);
-
-                    if($languageExist){
-                        $languageId = $languageExist->lang_id;
-                    }
-                    else{
-                        $languageId = DB::table('languages')->insertGetId([
-                            'lang_code' => $language['lang_code'],
-                            'lang_name' => $language['lang_name'],
-                        ]);
-                    }
-                    DB::table('question_translations')->insert([
-                        'question_id' => $questionId,
-                        'lang_id' => $languageId,
-                    ]);
-                }
             }
 
             // assign to area_id = 1
