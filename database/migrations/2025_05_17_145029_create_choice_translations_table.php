@@ -10,12 +10,12 @@ class CreateChoiceTranslationsTable extends Migration
     {
         Schema::create('choice_translations', function (Blueprint $t) {
             $t->unsignedInteger('choice_id');
-            $t->char('lang_code', 2);
+            $t->unsignedInteger('lang_id');
             $t->string('text', 255);
-            $t->primary(['choice_id','lang_code']);
+            $t->primary(['choice_id','lang_id']);
 
             $t->foreign('choice_id')->references('choice_id')->on('choices');
-            $t->foreign('lang_code')->references('lang_code')->on('languages');
+            $t->foreign('lang_id')->references('lang_id')->on('languages');
         });
     }
 

@@ -10,12 +10,11 @@ class CreateQuestionTranslationsTable extends Migration
     {
         Schema::create('question_translations', function (Blueprint $t) {
             $t->unsignedInteger('question_id');
-            $t->char('lang_code', 2);
-            $t->text('text_latex');
-            $t->primary(['question_id','lang_code']);
+            $t->unsignedInteger('lang_id');
+            $t->primary(['question_id','lang_id']);
 
             $t->foreign('question_id')->references('question_id')->on('questions');
-            $t->foreign('lang_code')->references('lang_code')->on('languages');
+            $t->foreign('lang_id')->references('lang_id')->on('languages');
         });
     }
 
