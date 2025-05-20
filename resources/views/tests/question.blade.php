@@ -29,7 +29,7 @@
 
     <div class="p-6">
         {{-- TEXT OTÁZKY – neescapovaný, aby KaTeX videl LaTeX --}}
-        <p class="mb-6 text-lg font-medium">{!! $question->question_text !!}</p>
+        <p class="question-text mb-6">{!! $question->question_text !!}</p>
 
         <form method="POST"
               action="{{ route('tests.answer', $run->run_id) }}"
