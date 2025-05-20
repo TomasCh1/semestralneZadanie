@@ -16,5 +16,11 @@ class TestRunQuestion extends Model
         'started_at', 'answered_at',
         'is_correct', 'user_answer', 'time_spent_sec',
     ];
+
+    public function question()
+    {
+        return $this->belongsTo(Question::class, 'question_id', 'question_id');
+    }
+
 }
 

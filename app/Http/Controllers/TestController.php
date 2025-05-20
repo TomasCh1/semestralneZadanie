@@ -10,16 +10,22 @@ use App\Models\TestRunQuestion;
 
 class TestController extends Controller
 {
-    /** Zobrazí aktuálnu otázku, prípadne výsledkovú obrazovku. */
+    /** Zobrazí aktuálnu otázku, alebo po skončení testu stránku s výsledkami. */
     public function show(Request $request, TestRun $run)
     {
-        // 1️⃣ – vygeneruj 15 náhodných otázok, ak ešte nie sú v session
+        /* 1️⃣ – ak ešte nemáme otázky v session, vygeneruj 15 náhodných */
         $key    = "run:{$run->run_id}:questions";
         $idxKey = "run:{$run->run_id}:idx";
 
-        if (!$request->session()->has($key)) {
+        if (!$request->session()->has($key) || empty($request->session()->get($key))) {
+
+            $total = Question::count();
+            if ($total === 0) {
+                return back()->with('error', 'V databáze nie sú žiadne otázky.');
+            }
+
             $ids = Question::inRandomOrder()
-                ->limit(15)
+                ->limit(min(15, $total))
                 ->pluck('question_id')
                 ->toArray();
 
@@ -30,29 +36,36 @@ class TestController extends Controller
         $ids     = $request->session()->get($key);
         $current = $request->session()->get($idxKey, 0);
 
-        // 2️⃣ – ak sme na konci zoznamu, spočítaj štatistiky a zobraz výsledky
+        /* 2️⃣ – ak sme na konci zoznamu, priprav štatistiky + detaily a zobraz výsledky */
         if ($current >= count($ids)) {
 
             $stats = DB::table('test_run_questions')
                 ->where('run_id', $run->run_id)
                 ->selectRaw('
-                           SUM(is_correct)           AS ok,
-                           COUNT(*)                  AS total,
+                           SUM(is_correct)                 AS ok,
+                           COUNT(*)                        AS total,
                            COALESCE(SUM(time_spent_sec),0) AS secs
                        ')
                 ->first();
 
+            // podrobný výpis otázok + odpovedí
+            $details = TestRunQuestion::with(['question.choices'])
+                ->where('run_id', $run->run_id)
+                ->orderBy('shown_order')
+                ->get();
+
             return view('tests.finished', [
-                'run'   => $run,
-                'stats' => $stats,
+                'run'     => $run,
+                'stats'   => $stats,
+                'details' => $details,
             ]);
         }
 
-        // 3️⃣ – načítaj práve zobrazovanú otázku
+        /* 3️⃣ – načítaj aktuálnu otázku */
         $questionId = $ids[$current];
         $question   = Question::findOrFail($questionId);
 
-        // 4️⃣ – ešte nie je v test_run_questions? → vložiť s started_at
+        /* 4️⃣ – ak ešte nie je v test_run_questions, zapíš začiatok */
         TestRunQuestion::firstOrCreate(
             ['run_id' => $run->run_id, 'question_id' => $questionId],
             [
@@ -68,7 +81,7 @@ class TestController extends Controller
         ]);
     }
 
-    /** Spracuje odpoveď a presmeruje na ďalšiu otázku. */
+    /** Spracuje odpoveď na otázku a presmeruje na ďalšiu. */
     public function answer(Request $request, TestRun $run)
     {
         $questionId = (int) $request->input('question_id');
@@ -78,15 +91,15 @@ class TestController extends Controller
             ->where('question_id', $questionId)
             ->firstOrFail();
 
-        // ▶︎ vyhodnotenie správnosti
+        /* vyhodnotenie správnosti */
         $correct = false;
         if ($question = Question::find($questionId)) {
 
-            if ($question->type === 'MCQ') {
+            if ($question->type === Question::TYPE_MCQ) {
                 $correct = DB::table('choices')
                         ->where('choice_id', $answer)
                         ->value('is_correct') == 1;
-            } else {                    // TEXT
+            } else {                                 // TEXT
                 $correct = strcasecmp(
                         preg_replace('/\s+/', '', $answer),
                         preg_replace('/\s+/', '', $question->correct_answer)
@@ -94,11 +107,11 @@ class TestController extends Controller
             }
         }
 
-        // ▶︎ výpočet času stráveného na otázke
+        /* výpočet času na otázke */
         $started = $trq->started_at ?? now();
         $spent   = now()->diffInSeconds($started);
 
-        // ▶︎ update riadku
+        /* ulož výsledok */
         $trq->update([
             'answered_at'    => now(),
             'user_answer'    => $answer,
@@ -106,7 +119,7 @@ class TestController extends Controller
             'time_spent_sec' => $spent,
         ]);
 
-        // ▶︎ posuň index v session
+        /* posuň index otázky v session */
         $idxKey = "run:{$run->run_id}:idx";
         $request->session()->increment($idxKey);
 
