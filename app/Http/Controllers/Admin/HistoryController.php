@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\TestRun;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
@@ -15,8 +14,8 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        // Dotaz na test_runs s počtom otázok a počtom správnych odpovedí
-        $runs = TestRun::select('test_runs.*',
+        $runs = TestRun::select(
+            'test_runs.*',
             DB::raw('COUNT(trq.run_q_id) AS total_questions'),
             DB::raw('SUM(trq.is_correct) AS correct_questions')
         )
@@ -29,12 +28,32 @@ class HistoryController extends Controller
     }
 
     /**
+     * Zobrazenie detailu jedného test-runu (otázky + stav).
+     */
+    public function show(TestRun $run)
+    {
+        // Načítať všetky otázky k tomuto run_id vrátane textu otázky
+        $questions = DB::table('test_run_questions as trq')
+            ->join('questions as q', 'trq.question_id', '=', 'q.question_id')
+            ->where('trq.run_id', $run->run_id)
+            ->select(
+                'q.question_id as id',
+                'q.question_text as text',
+                'trq.is_correct'
+            )
+            ->get();
+
+        return view('admin.history.show', compact('run', 'questions'));
+    }
+
+    /**
      * Export zoznamu do CSV.
      */
     public function export()
     {
         $response = new StreamedResponse(function () {
             $handle = fopen('php://output', 'w');
+
             // Hlavička CSV
             fputcsv($handle, [
                 'Run ID',
@@ -48,7 +67,6 @@ class HistoryController extends Controller
                 'Correct Questions',
             ]);
 
-            // Streamujeme všetky riadky
             DB::table('test_runs')
                 ->leftJoin('test_run_questions AS trq', 'test_runs.run_id', '=', 'trq.run_id')
                 ->select(
@@ -92,16 +110,25 @@ class HistoryController extends Controller
         });
 
         $response->headers->set('Content-Type', 'text/csv');
-        $response->headers->set('Content-Disposition', 'attachment; filename="history.csv"');
+        $response->headers->set(
+            'Content-Disposition',
+            'attachment; filename="history.csv"'
+        );
 
         return $response;
     }
 
     /**
-     * Vymazanie jedného záznamu.
+     * Vymazanie jedného záznamu vrátane jeho otázok.
      */
     public function destroy(TestRun $run)
     {
+        // Najprv vymaž otázky patriace k tomuto run_id
+        DB::table('test_run_questions')
+            ->where('run_id', $run->run_id)
+            ->delete();
+
+        // Potom odstráň samotný test run
         $run->delete();
 
         return redirect()
@@ -109,5 +136,3 @@ class HistoryController extends Controller
             ->with('success', 'Záznam bol vymazaný.');
     }
 }
-
-
