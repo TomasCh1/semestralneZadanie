@@ -10,12 +10,12 @@ class CreateAreaTranslationsTable extends Migration
     {
         Schema::create('area_translations', function (Blueprint $t) {
             $t->unsignedInteger('area_id');
-            $t->char('lang_code', 2);
+            $t->unsignedInteger('lang_id');
             $t->string('name', 100);
-            $t->primary(['area_id','lang_code']);
+            $t->primary(['area_id','lang_id']);
 
             $t->foreign('area_id')->references('area_id')->on('areas')->onDelete('cascade');
-            $t->foreign('lang_code')->references('lang_code')->on('languages')->onDelete('cascade');
+            $t->foreign('lang_id')->references('lang_id')->on('languages')->onDelete('cascade');
         });
     }
 
