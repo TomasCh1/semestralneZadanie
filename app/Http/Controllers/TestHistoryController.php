@@ -13,6 +13,6 @@ $testRuns = TestRun::with('questions')
 ->orderByDesc('started_at')
 ->get();
 
-return view('history', compact('testRuns'));
+return view('TestHistory', compact('testRuns'));
 }
 }
