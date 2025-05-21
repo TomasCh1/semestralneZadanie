@@ -122,3 +122,6 @@ li.choice-item.incorrect::before {
     }
     .flex-center{ flex-wrap:wrap; }
 }
+ul{
+    list-style-type: none;
+}

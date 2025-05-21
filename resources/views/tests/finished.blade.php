@@ -59,7 +59,7 @@
 
                                     {{-- MCQ – zobraz možnosti a zvýrazni správnu --}}
                                     @if($q->type === 'MCQ')
-                                        <ul class="list-disc ml-6">
+                                        <ul class=" ml-6">
                                             @foreach($q->choices as $ch)
 
                                                 @php

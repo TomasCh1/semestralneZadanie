@@ -36,7 +36,7 @@ class TestController extends Controller
         $ids     = $request->session()->get($key);
         $current = $request->session()->get($idxKey, 0);
 
-        /* 2️⃣ – ak sme na konci zoznamu, priprav štatistiky + detaily a zobraz výsledky */
+        /* ak sme na konci zoznamu, priprav štatistiky + detaily a zobraz výsledky */
         if ($current >= count($ids)) {
 
             $stats = DB::table('test_run_questions')
@@ -49,13 +49,14 @@ class TestController extends Controller
                 ->first();
 
             // podrobný výpis otázok + odpovedí
-            $details = TestRunQuestion::with([
-                'question.choices',
-                'question.areas'
-            ])
+            $details = TestRunQuestion::with(['question.choices'])
                 ->where('run_id', $run->run_id)
                 ->orderBy('shown_order')
                 ->get();
+
+            $tz = $run->timezone ?? 'UTC';
+            $run->finished_at = now()->setTimezone($tz);
+            $run->save();
 
             return view('tests.finished', [
                 'run'     => $run,

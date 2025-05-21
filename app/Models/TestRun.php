@@ -26,6 +26,7 @@ class TestRun extends Model
         'run_number',
         'city',
         'state',
+        'finished_at',
     ];
 
 }
