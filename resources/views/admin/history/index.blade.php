@@ -1,6 +1,6 @@
 {{-- resources/views/admin/history/index.blade.php --}}
 
-@extends('layouts.admin')
+{{--@extends('layouts.admin')--}}
 @php
     if (auth()->user()?->role_id !== 1) {
         header('Location: ' . route('dashboard'));
@@ -69,4 +69,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>>
+</x-app-layout>
