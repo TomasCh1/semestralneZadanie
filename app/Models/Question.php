@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Area;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+
 
 class Question extends Model
 {
@@ -33,6 +36,16 @@ class Question extends Model
     public function runs(): HasMany
     {
         return $this->hasMany(TestRunQuestion::class, 'question_id', 'question_id');
+    }
+
+    public function areas(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Area::class,
+            'question_areas',
+            'question_id',
+            'area_id'
+        );
     }
 
     /* ────────  POMOCNÁ METÓDA  ──────── */

@@ -66,6 +66,34 @@ li .katex-display,
     padding:0 .125rem;
 }
 
+li.underline {
+    text-decoration: none !important;
+}
+
+/* ikony pred odpoveďou */
+li.choice-item {
+    position: relative;
+    padding-left: 1.5rem; /* miesto na ikonku */
+}
+
+/* fajočka – zelená */
+li.choice-item.correct::before {
+    content: "✔" !important;
+    position: absolute !important;
+    left: 0 !important;
+    color: green !important; /* zelená */
+    font-weight: bold !important;
+}
+
+/* krížik – červený */
+li.choice-item.incorrect::before {
+    content: "✖" !important;
+    position: absolute !important;
+    left: 0 !important;
+    color: red !important; /* červená */
+    font-weight: bold !important;
+}
+
 /* ----------  MEDIA QUERY: mobil / tablet ---------- */
 
 @media (max-width:1100px){

@@ -52,12 +52,13 @@ class MSQSeeder extends Seeder
                             'name' => $areaName['name'],
                         ]);
                     }
+                    DB::table('question_areas')->insert([
+                        'question_id' => $questionId,
+                        'area_id' => $areaId,
+                    ]);
                 }
 
-                DB::table('question_areas')->insert([
-                    'question_id' => $questionId,
-                    'area_id' => $areaId,
-                ]);
+
 
                 foreach ($item['languages'] as $languageName) {
                     $languageExist = DB::table('languages')
