@@ -7,19 +7,32 @@ use App\Http\Controllers\TestRunController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\Admin\HistoryController;
+use App\Http\Controllers\GuestTestController;
 
+Route::prefix('guest-test')->name('guest.')->group(function () {
+    // /guest-test          → vyplnenie 15 náhodných otázok
+    Route::get('/',           [GuestTestController::class, 'start'   ])->name('start');
+    // /guest-test/finished   → súhrn výsledkov z localStorage
+    Route::get('/finished',   [GuestTestController::class, 'finished'])->name('finished');
+});
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    // prihlásený používateľ → zobrazí dashboard.blade.php
+    if (Auth::check()) {
+        return view('dashboard');
+    }
 
+    // hosť → okamžité presmerovanie na guest test
+    return redirect()->route('guest.start');
+})->name('dashboard');
 
 Route::get('/TestHistory', [TestHistoryController::class, 'index'])->name('TestHistory');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::view('/dashboard', 'dashboard')->name('dashboard');
 
 Route::middleware('guest')->group(function () {
     Route::view('/', 'auth.index');
