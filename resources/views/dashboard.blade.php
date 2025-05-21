@@ -5,6 +5,9 @@
         </h2>
     </x-slot>
 
+    {{-- skrytý iframe → vďaka nemu sa PDF stiahne bez presmerovania/refreshu --}}
+    <iframe id="pdf-download-frame" style="display:none;"></iframe>
+
     <div class="py-8 mt-2">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -19,52 +22,54 @@
                             <h2 class="text-2xl font-semibold mb-2">
                                 {{ __('dashboardL.how_it_works') }}
                             </h2>
+
+                            {{-- dynamicky zoznam krokov – žiadne ručné <li> --}}
                             <ol class="list-decimal list-inside space-y-2">
-                                <li>{{ __('dashboardL.steps.click_start') }}</li>
-                                <li>{{ __('dashboardL.steps.solve_random') }}</li>
-                                <li>{{ __('dashboardL.steps.one_answer') }}</li>
-                                <li>{{ __('dashboardL.steps.format_open') }}</li>
-                                <li>{{ __('dashboardL.steps.no_time_limit') }}</li>
-                                <li>{{ __('dashboardL.steps.show_categories') }}</li>
-                                <li>{{ __('dashboardL.steps.save_results') }}</li>
+                                @foreach(__('dashboardL.steps') as $step)
+                                    <li>{{ $step }}</li>
+                                @endforeach
                             </ol>
                         </div>
 
-                        {{-- privítanie + tlačidlo --}}
+                        {{-- privítanie + tlačidlá --}}
                         <div class="text-center">
                             @if(Auth::check())
-                                {{-- prihlásený používateľ – pozdrav bez mena --}}
                                 <p class="mb-4">
                                     {{ __('dashboardL.greeting', ['name' => Auth::user()->name]) }}
                                 </p>
 
-                                <form method="POST" action="{{ route('test-runs.start') }}"
-                                      class="flex justify-center items-center">
-                                    @csrf
-                                    <input type="hidden" name="timezone" id="tz">
+                                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                                    {{-- START TEST --}}
+                                    <form method="POST" action="{{ route('test-runs.start') }}">
+                                        @csrf
+                                        <input type="hidden" name="timezone" id="tz">
+                                        <x-dashboard-button type="submit">
+                                            {{ __('dashboardL.start_test') }}
+                                        </x-dashboard-button>
+                                    </form>
 
-                                    <x-dashboard-button type="submit">
-                                        {{ __('dashboardL.start_test') }}
+                                    {{-- STIAHNUŤ PDF – stránka sa nemení --}}
+                                    <x-dashboard-button type="button"
+                                                        onclick="document.getElementById('pdf-download-frame').src='{{ route('dashboard.pdf') }}'">
+                                        {{ __('PDF') }}
                                     </x-dashboard-button>
-                                </form>
+                                </div>
                             @else
                                 {{-- hosť (guest) --}}
                                 <p class="mb-4">
                                     {!! __('dashboardL.guest_prompt', [
                                         'login_link' => '<a href="'.route('login').'"
+
                                                          class="text-blue-600 underline">
                                                          '.__('dashboardL.login').'</a>'
                                     ]) !!}
                                 </p>
 
                                 <div class="flex justify-center items-center">
-                                    <x-dashboard-button
-                                            type="button"
-                                            onclick="window.location.href='{{ route('guest.start') }}'">
+                                    <x-dashboard-button type="button"
+                                                        onclick="window.location.href='{{ route('guest.start') }}'">
                                         {{ __('dashboardL.start_test') }}
                                     </x-dashboard-button>
-
-
                                 </div>
                             @endif
                         </div>
@@ -79,9 +84,9 @@
 {{-- timezone doplníme len prihlásenému (keď existuje #tz) --}}
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const tz = document.getElementById('tz');
-        if (tz) {
-            tz.value = Intl.DateTimeFormat().resolvedOptions().timeZone ?? 'UTC';
+        const tzInput = document.getElementById('tz');
+        if (tzInput) {
+            tzInput.value = Intl.DateTimeFormat().resolvedOptions().timeZone ?? 'UTC';
         }
     });
 </script>

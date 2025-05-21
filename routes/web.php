@@ -8,6 +8,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\GuestTestController;
+use App\Http\Controllers\DashboardController;
 
 Route::prefix('guest-test')->name('guest.')->group(function () {
     // /guest-test          → vyplnenie 15 náhodných otázok
@@ -29,6 +30,9 @@ Route::get('/dashboard', function () {
     // hosť → okamžité presmerovanie na guest test
     return redirect()->route('guest.start');
 })->name('dashboard');
+Route::get('/dashboard/export-pdf', [DashboardController::class, 'exportPdf'])
+    ->middleware('auth')       // verified pridaj až keď to funguje
+    ->name('dashboard.pdf');
 
 Route::get('/TestHistory', [TestHistoryController::class, 'index'])->name('TestHistory');
 
