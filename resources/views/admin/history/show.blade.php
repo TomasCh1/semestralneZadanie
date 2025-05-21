@@ -1,6 +1,12 @@
 {{-- resources/views/admin/history/show.blade.php --}}
 
 @extends('layouts.admin')
+@php
+    if (auth()->user()?->role_id !== 1) {
+        header('Location: ' . route('dashboard'));
+        exit;
+    }
+@endphp
 
 @section('content')
     <div class="flex items-center justify-between mb-6">
