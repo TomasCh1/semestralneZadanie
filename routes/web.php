@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestHistoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestRunController;
 use App\Http\Controllers\TestController;
@@ -17,7 +18,7 @@ Route::middleware('guest')->group(function () {
     Route::view('dashboard', 'dashboard');
 });
 
-//Route::get('/history', [TestHistoryController::class, 'index'])->name('history');
+Route::get('/TestHistory', [TestHistoryController::class, 'index'])->name('TestHistory');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -15,7 +15,10 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <!-- Dashboard -->
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('navigationL.dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('TestHistory')" :active="request()->routeIs('TestHistory')">
+                        {{ __('navigationL.history') }}
                     </x-nav-link>
 
                     <!-- Admin: História -->
@@ -23,7 +26,7 @@
                             :href="route('admin.history.index')"
                             :active="request()->routeIs('admin.history.*')"
                     >
-                        {{ __('Admin') }}
+                        {{ __('navigationL.admin') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -45,7 +48,7 @@
 
                         <x-slot name="content">
                             <x-dropdown-link :href="route('profile.edit')">
-                                {{ __('Profile') }}
+                                {{ __('navigationL.profile') }}
                             </x-dropdown-link>
 
                             <!-- Authentication -->
@@ -53,7 +56,7 @@
                                 @csrf
                                 <x-dropdown-link :href="route('logout')"
                                                  onclick="event.preventDefault(); this.closest('form').submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('navigationL.logout') }}
                                 </x-dropdown-link>
                             </form>
                         </x-slot>
@@ -90,14 +93,17 @@
         <div class="pt-2 pb-3 space-y-1">
             <!-- Dashboard (mobile) -->
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('navigationL.dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('TestHistory')" :active="request()->routeIs('TestHistory')">
+                {{ __('navigationL.history') }}
             </x-responsive-nav-link>
             <!-- Admin: História (mobile) -->
             <x-responsive-nav-link
                     :href="route('admin.history.index')"
                     :active="request()->routeIs('admin.history.*')"
             >
-                {{ __('Admin') }}
+                {{ __('navigationL.admin') }}
             </x-responsive-nav-link>
         </div>
 
@@ -110,7 +116,7 @@
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                    {{ __('navigationL.profile') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
@@ -118,7 +124,7 @@
                     @csrf
                     <x-responsive-nav-link :href="route('logout')"
                                            onclick="event.preventDefault(); this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('navigationL.logout') }}
                     </x-responsive-nav-link>
                 </form>
             </div>
