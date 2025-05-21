@@ -11,8 +11,8 @@
                     <div class="container mx-auto space-y-6">
 
 
-                        <div class="overflow-x-auto">
-                            <table class="min-w-full divide-y divide-gray-200 text-sm">
+                        <div class="overflow-x-auto px-4">
+                            <table class="w-full divide-y divide-gray-200 text-sm">
                                 <thead class="bg-gray-100">
                                 <tr>
                                     <th class="px-4 py-2 text-left text-gray-600">{{__('historyL.date')}}</th>
