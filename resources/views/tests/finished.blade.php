@@ -52,18 +52,27 @@
                         – <span>{{ $ok ? '✓ správne' : '✗ zle' }}</span>
                     </p>
 
+
                     {{-- MCQ – zobraz možnosti a zvýrazni správnu --}}
                     @if($q->type === 'MCQ')
                         <ul class="list-disc ml-6">
                             @foreach($q->choices as $ch)
-                                <li
-                                        @class([
-                                            'font-semibold' => $ch->is_correct,
-                                            'underline'     => $ch->choice_id == $row->user_answer,
-                                        ])
-                                >
-                                    {{ $ch->text }}
-                                    @if($ch->is_correct) (správna)@endif
+
+                                @php
+                                    // Triedy pre stav odpovede
+                                    $isUser = $ch->choice_id == $row->user_answer;
+                                    $cls = 'choice-item ';
+                                    // ak je toto užívateľova voľba a nesprávna
+                                    if ($isUser && ! $ch->is_correct) {
+                                        $cls .= 'incorrect';
+                                    }
+                                    // ak je to správna odpoveď (či už ju user vybral alebo nie)
+                                    if ($ch->is_correct) {
+                                        $cls .= 'correct';
+                                    }
+                                @endphp
+                                <li class="{{ trim($cls) }}">
+                                    {{ chr(96 + $loop->iteration) }}) {{ $ch->text }}
                                 </li>
                             @endforeach
                         </ul>
@@ -71,11 +80,17 @@
                         <p>Vaša odpoveď: <code>{{ $row->user_answer }}</code></p>
                         <p>Správna odpoveď: <code>{{ $q->correct_answer }}</code></p>
                     @endif
-
+                    @if($q->areas->isNotEmpty())
+                        <p class="text-sm text-indigo-700 mt-1">
+                            <strong>Oblasti:</strong>
+                            {{ $q->areas->pluck('name')->join(', ') }}
+                        </p>
+                    @endif
                     <p class="text-sm text-gray-500 mt-1">
                         Čas: {{\Carbon\CarbonInterval::seconds($row->time_spent_sec)
                        ->cascade()->format('%h:%I:%S')  }}
                     </p>
+
                 </div>
             @endforeach
         </div>

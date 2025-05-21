@@ -49,7 +49,10 @@ class TestController extends Controller
                 ->first();
 
             // podrobný výpis otázok + odpovedí
-            $details = TestRunQuestion::with(['question.choices'])
+            $details = TestRunQuestion::with([
+                'question.choices',
+                'question.areas'
+            ])
                 ->where('run_id', $run->run_id)
                 ->orderBy('shown_order')
                 ->get();
