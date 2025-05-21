@@ -22,12 +22,16 @@
                     </x-nav-link>
 
                     <!-- Admin: História -->
-                    <x-nav-link
-                            :href="route('admin.history.index')"
-                            :active="request()->routeIs('admin.history.*')"
-                    >
-                        {{ __('navigationL.admin') }}
-                    </x-nav-link>
+                    @auth
+                        @if(auth()->user()->role_id == 1)
+                            <x-nav-link
+                                :href="route('admin.history.index')"
+                                :active="request()->routeIs('admin.history.*')"
+                            >
+                                {{ __('navigationL.admin') }}
+                            </x-nav-link>
+                        @endif
+                    @endauth
                 </div>
             </div>
 
