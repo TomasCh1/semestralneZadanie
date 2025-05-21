@@ -70,7 +70,12 @@
                                                         onclick="window.location.href='{{ route('guest.start') }}'">
                                         {{ __('dashboardL.start_test') }}
                                     </x-dashboard-button>
+
                                 </div>
+                                <x-dashboard-button type="button"
+                                                    onclick="document.getElementById('pdf-download-frame').src='{{ route('dashboard.pdf') }}'">
+                                    {{ __('PDF') }}
+                                </x-dashboard-button>
                             @endif
                         </div>
 
