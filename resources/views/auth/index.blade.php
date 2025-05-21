@@ -1,4 +1,4 @@
-{{-- resources/views/auth/index.blade.php --}}
+{{-- resources/views/auth/history.blade.php --}}
 <x-guest-layout>
     <div
             x-data="{ tab: 'login' }"          {{-- aktuálna záložka --}}

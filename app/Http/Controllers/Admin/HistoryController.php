@@ -14,25 +14,38 @@ class HistoryController extends Controller
      */
     public function index()
     {
+        $users = DB::table('users')
+            ->select('id as user_id', 'name as user_name', 'email as user_email')
+            ->orderBy('name')
+            ->paginate(20);
+
+        return view('admin.history.index', compact('users'));
+    }
+
+    /**
+     * Zobrazenie detailu jedného test-runu (otázky + stav).
+     */
+    public function show($userId)
+    {
         $runs = TestRun::select(
             'test_runs.*',
             DB::raw('COUNT(trq.run_q_id) AS total_questions'),
             DB::raw('SUM(trq.is_correct) AS correct_questions')
         )
             ->leftJoin('test_run_questions AS trq', 'test_runs.run_id', '=', 'trq.run_id')
+            ->where('test_runs.user_id', $userId) // filtrovanie podľa konkrétneho používateľa
             ->groupBy('test_runs.run_id')
             ->orderBy('test_runs.started_at', 'desc')
             ->paginate(20);
 
-        return view('admin.history.index', compact('runs'));
+        return view('admin.history.show', compact('runs'));
     }
-
-    /**
-     * Zobrazenie detailu jedného test-runu (otázky + stav).
-     */
-    public function show(TestRun $run)
+    public function details($userId, $runId)
     {
-        // Načítať všetky otázky k tomuto run_id vrátane textu otázky
+        // Overíme, či daný test patrí zadanému používateľovi
+        $run = TestRun::where('run_id', $runId)
+            ->where('user_id', $userId)
+            ->firstOrFail();
         $questions = DB::table('test_run_questions as trq')
             ->join('questions as q', 'trq.question_id', '=', 'q.question_id')
             ->where('trq.run_id', $run->run_id)
@@ -43,7 +56,7 @@ class HistoryController extends Controller
             )
             ->get();
 
-        return view('admin.history.show', compact('run', 'questions'));
+        return view('admin.history.details', compact('run', 'questions'));
     }
 
     /**

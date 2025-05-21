@@ -68,8 +68,10 @@ Route::prefix('admin')
             ->name('history.export');
 
         // Show a single test run (so GET /admin/history/{run} is allowed)
-        Route::get('history/{run}',       [HistoryController::class, 'show'])
+        Route::get('history/{userId}',       [HistoryController::class, 'show'])
             ->name('history.show');
+        Route::get('/history/{userId}/run/{runId}', [HistoryController::class, 'details'])
+            ->name('history.details');
 
         // Delete a single record
         Route::delete('history/{run}', [HistoryController::class, 'destroy'])

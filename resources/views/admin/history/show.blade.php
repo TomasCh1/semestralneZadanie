@@ -1,4 +1,4 @@
-{{-- resources/views/admin/history/show.blade.php --}}
+{{-- resources/views/admin/history/index.blade.php --}}
 
 @extends('layouts.admin')
 @php
@@ -8,93 +8,110 @@
     }
 @endphp
 
-@section('content')
-    <div class="flex items-center justify-between mb-6">
-        {{-- Názov stránky --}}
-        <h1 class="text-2xl font-bold text-gray-800">{{ __('Detaily test runu') }}</h1>
-
-        {{-- Tlačidlo na export CSV --}}
-        <a
+<x-app-layout>
+    {{-- Názov stránky --}}
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">{{ __('adminL.history_title') }}</h2>
+        <div>
+            <a
                 href="{{ route('admin.history.export') }}"
-                class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-xs font-semibold uppercase rounded hover:bg-blue-500 focus:outline-none transition"
-        >
-            {{ __('Export CSV') }}
-        </a>
-    </div>
-
-    {{-- Odkaz späť na zoznam --}}
-    <div class="mb-4">
-        <a href="{{ route('admin.history.index') }}" class="text-blue-600 hover:underline">
-            ← {{ __('Späť na zoznam') }}
-        </a>
-    </div>
-
-    {{-- Detaily runu --}}
-    <div class="bg-white overflow-x-auto shadow-sm sm:rounded-lg p-6">
-        <dl class="grid grid-cols-2 gap-x-4 gap-y-2">
-            <dt class="font-medium text-gray-600">{{ __('Run ID') }}</dt>
-            <dd>{{ $run->run_id }}</dd>
-
-            <dt class="font-medium text-gray-600">{{ __('User ID') }}</dt>
-            <dd>{{ $run->user_id ?? '–' }}</dd>
-
-            <dt class="font-medium text-gray-600">{{ __('Anon. ID') }}</dt>
-            <dd>{{ $run->anon_id ?? '–' }}</dd>
-
-            <dt class="font-medium text-gray-600">{{ __('Začiatok') }}</dt>
-            <dd>{{ \Illuminate\Support\Carbon::parse($run->started_at)->format('d.m.Y H:i') }}</dd>
-
-            <dt class="font-medium text-gray-600">{{ __('Ukončenie') }}</dt>
-            <dd>
-                @if($run->finished_at)
-                    {{ \Illuminate\Support\Carbon::parse($run->finished_at)->format('d.m.Y H:i') }}
-                @else
-                    &ndash;
-                @endif
-            </dd>
-
-            <dt class="font-medium text-gray-600">{{ __('Mesto') }}</dt>
-            <dd>{{ $run->city ?? '–' }}</dd>
-
-            <dt class="font-medium text-gray-600">{{ __('Štát') }}</dt>
-            <dd>{{ $run->state ?? '–' }}</dd>
-
-            <dt class="font-medium text-gray-600">{{ __('Počet otázok') }}</dt>
-            <dd>{{ $run->total_questions }}</dd>
-
-            <dt class="font-medium text-gray-600">{{ __('Počet správnych') }}</dt>
-            <dd>{{ $run->correct_questions }}</dd>
-        </dl>
-
-        {{-- Tabuľka otázok --}}
-        <div class="mt-6">
-            <h2 class="text-lg font-semibold text-gray-800">{{ __('Otázky') }}</h2>
-            <div class="overflow-x-auto mt-2">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-50">
-                    <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID otázky</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Text otázky</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Správne</th>
-                    </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach($questions as $q)
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ $q->id }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ $q->text }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                @if($q->is_correct)
-                                    <span class="text-green-600 font-semibold">✔️</span>
-                                @else
-                                    <span class="text-red-600 font-semibold">❌</span>
-                                @endif
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
+                class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-blue-500 text-xs font-semibold uppercase rounded transition"
+            >
+                {{ __('adminL.export') }}
+            </a>
+        </div>
+    </x-slot>
+    @if(session('success'))
+        <div class="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+            {{ session('success') }}
+        </div>
+    @endif
+    <div class="py-8 mt-2">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <div class="container mx-auto space-y-6">
+                        <div class="overflow-x-auto px-4">
+                            <table class="w-full divide-y divide-gray-200 text-sm">
+                                <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('adminL.id')}}</th>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('adminL.user_id')}}</th>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('adminL.anon_id')}}</th>
+                                    <th class="px-4 py-2  text-gray-600 align-middle text-center">{{__('adminL.start')}}</th>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('adminL.end')}}</th>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('adminL.city')}}</th>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('adminL.country')}}</th>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('adminL.no_questions')}}</th>
+                                    <th class="px-4 py-2 text-left text-gray-600">{{__('adminL.correct_answers')}}</th>
+                                    <th class="px-4 py-2  text-gray-600 align-middle text-center">{{__('adminL.actions')}}</th>
+                                </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                @forelse($runs as $run)
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">{{ $run->run_id }}</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">{{ $run->user_id ?? '–' }}</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">{{ $run->anon_id ?? '–' }}</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            {{ \Illuminate\Support\Carbon::parse($run->started_at)->format('d.m.Y H:i') }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            @if($run->finished_at)
+                                                {{ \Illuminate\Support\Carbon::parse($run->finished_at)->format('d.m.Y H:i') }}
+                                            @else
+                                                &ndash;
+                                            @endif
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">{{ $run->city ?? '–' }}</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">{{ $run->state ?? '–' }}</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">{{ $run->total_questions }}</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">{{ $run->correct_questions }}</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-center space-x-2">
+                                            <a
+                                                href="{{ route('admin.history.details', ['userId' => $run->user_id, 'runId' => $run->run_id]) }}"
+                                                class="inline-flex items-center px-3 py-1 bg-indigo-600 hover:bg-indigo-700 text-green-500 text-sm font-semibold uppercase rounded-md shadow transition duration-150"
+                                            >
+                                                {{ __('adminL.details') }}
+                                            </a>
+                                            <form
+                                                action="{{ route('admin.history.destroy', $run->run_id) }}"
+                                                method="POST"
+                                                onsubmit="return confirm('{{ __('adminL.confirm_delete') }}');"
+                                                class="inline-block"
+                                            >
+                                                @csrf
+                                                @method('DELETE')
+                                                <button
+                                                    type="submit"
+                                                    class="inline-flex items-center px-2 py-1 bg-red-600 hover:bg-red-700 text-white text-xs font-semibold uppercase rounded transition"
+                                                >
+                                                    {{ __('adminL.delete') }}
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="10" class="px-6 py-4 text-center text-sm text-gray-500">
+                                            {{__ ('adminL.no_records') }}
+                                        </td>
+                                    </tr>
+                                @endforelse
+                                </tbody>
+                            </table>
+                            <div class="mb-4">
+                                <a href="{{ route('admin.history.index') }}" class="text-blue-600 hover:underline">
+                                    ← {{ __('adminL.back') }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-@endsection
+    <div class="mt-6 flex justify-center">
+        {{ $runs->links() }}
+    </div>
+</x-app-layout>>
