@@ -67,7 +67,14 @@
                         </x-slot>
                     </x-dropdown>
                 </div>
+                @else
+                    <x-dashboard-button
+                        type="button" class="mr-1"
+                        onclick="window.location.href='{{ route('login') }} '">
+                        {{ __('Login') }}
+                    </x-dashboard-button>
                 @endauth
+
 
                 <!-- Locale Switcher -->
                 <nav class="flex items-center">
@@ -120,7 +127,7 @@
                 <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
             </div>
-            @endauth
+
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('navigationL.profile') }}
@@ -135,6 +142,12 @@
                     </x-responsive-nav-link>
                 </form>
             </div>
+            @else
+                <x-responsive-nav-link :href="route('login')"
+                                       onclick="window.location.href='{{ route('login') }}">
+                    {{ __('Login') }}
+                </x-responsive-nav-link>
+            @endauth
         </div>
     </div>
 </nav>
