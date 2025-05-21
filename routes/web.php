@@ -13,10 +13,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('guest')->group(function () {
-    Route::view('/', 'auth.index');
-    Route::view('dashboard', 'dashboard');
-});
+
 
 Route::get('/TestHistory', [TestHistoryController::class, 'index'])->name('TestHistory');
 
@@ -24,6 +21,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::middleware('guest')->group(function () {
+    Route::view('/', 'auth.index');
+});
 
 Route::middleware('auth')->group(function () {
     // Profile
